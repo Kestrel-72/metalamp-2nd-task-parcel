@@ -1,12 +1,13 @@
 {
     "name": "my-project",
-    "source": "./src/index.html",
+    "source": "./src/index.pug",
     "scripts": {
         "start": "parcel",
         "build": "parcel build"
     },
     "devDependencies": {
         "@parcel/resolver-glob": "^2.12.0",
+        "@parcel/transformer-pug": "^2.12.0",
         "parcel": "^2.12.0"
     }
 }
