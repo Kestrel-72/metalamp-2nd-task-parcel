@@ -1,1 +1,10 @@
-div.component Component!
+- let user = { name: "Roman", loggedIn: true, lastLogin: 6 };
+- let user2 = { name: "Eve", loggedIn: false, lastLogin: 300 };
+
+mixin greeting(user)
+   if user.loggedIn 
+      p. 
+         Hi, #{user.name}
+   else 
+      a(href="#") Log in
+       

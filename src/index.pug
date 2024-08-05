@@ -1,9 +1,13 @@
+include blocks/component/component
+include blocks/header/header
+
 doctype html
 html
   head
     style
       include style.css
   body
-    include blocks/header/header.pug
-    include blocks/component/component.pug
+    +header("New header!")
+    +greeting(user)
+    +greeting(user2)
     
