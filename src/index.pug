@@ -3,11 +3,14 @@ include blocks/header/header
 
 doctype html
 html
-  head
-    style
-      include style.css
-  body
-    +header("New header!")
-    +greeting(user)
-    +greeting(user2)
-    
+   head
+      style
+         include style/style.css
+   body
+      h1 This one is the sub-section or widget title
+      h2 Next one is the item title inside widgets
+      h3 This is a label or CTA text
+      p This is the body text which is used for most of the design, like paragraphs, lists, etc.
+      +header("New header!")
+      +greeting(user)
+      +greeting(user2)
