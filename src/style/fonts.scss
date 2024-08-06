@@ -1,3 +1,5 @@
+@use 'colors';
+
 @font-face {
    font-family: 'montserratregular';
    src: url('/src/font-files/montserrat-regular-webfont.woff2') format('woff2'),
@@ -10,5 +12,27 @@
         url('/src/font-files/Montserrat-Bold.woff') format('woff');
 }
 
-$font-stack-bold: 'montserratbold';
-$font-stack-regular: 'montserratregular';
+@mixin h1-style {
+   font-family: 'montserratbold';
+   font-size: 24px;
+   color: colors.$dark-shade-100;
+}
+
+@mixin h2-style {
+   font-family: 'montserratbold';
+   font-size: 19px;
+   color: colors.$dark-shade-100;
+}
+
+@mixin h3-style {
+   font-family: 'montserratbold';
+   font-size: 12px;
+   color: colors.$dark-shade-100;
+   text-transform: uppercase;
+}
+
+@mixin body-style {
+   font-family: 'montserratregular';
+   font-size: 14px;
+   color: colors.$dark-shade-75;
+}

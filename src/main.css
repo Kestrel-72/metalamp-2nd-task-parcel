@@ -7,32 +7,15 @@
   src: url("/src/font-files/Montserrat-Bold.woff2") format("woff2"), url("/src/font-files/Montserrat-Bold.woff") format("woff");
 }
 .component {
-  color: rgb(188, 156, 255);
-}
-
-h1 {
-  font: 100% "montserratbold";
-  color: rgb(31, 32, 65);
-  font-size: 24px;
-}
-
-h2 {
-  font: 100% "montserratbold";
-  color: rgb(31, 32, 65);
+  font-family: "montserratbold";
   font-size: 19px;
-}
-
-h3 {
-  font: 100% "montserratbold";
   color: rgb(31, 32, 65);
-  font-size: 12px;
-  text-transform: uppercase;
 }
 
-body {
-  font: 100% "montserratregular";
-  color: rgba(31, 32, 65, 0.75);
-  font-size: 14px;
+header {
+  font-family: "montserratbold";
+  font-size: 24px;
+  color: rgb(31, 32, 65);
 }
 
 /*# sourceMappingURL=main.css.map */

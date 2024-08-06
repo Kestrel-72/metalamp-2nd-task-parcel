@@ -1,5 +1,5 @@
-@use '../../style/colors.scss';
+@use '../../style/fonts' as *;
 
 .component {
-   color: colors.$purple;
+   @include h2-style();
 }
