@@ -1,12 +1,15 @@
-@import "./blocks/*/*.css";
 @font-face {
   font-family: "montserratregular";
-  src: url("/src/fonts/montserrat-regular-webfont.woff2") format("woff2"), url("/src/fonts/montserrat-regular-webfont.woff") format("woff");
+  src: url("/src/font-files/montserrat-regular-webfont.woff2") format("woff2"), url("/src/font-files/montserrat-regular-webfont.woff") format("woff");
 }
 @font-face {
   font-family: "montserratbold";
-  src: url("/src/fonts/Montserrat-Bold.woff2") format("woff2"), url("/src/fonts/Montserrat-Bold.woff") format("woff");
+  src: url("/src/font-files/Montserrat-Bold.woff2") format("woff2"), url("/src/font-files/Montserrat-Bold.woff") format("woff");
 }
+.component {
+  color: rgb(188, 156, 255);
+}
+
 h1 {
   font: 100% "montserratbold";
   color: rgb(31, 32, 65);
@@ -32,4 +35,4 @@ body {
   font-size: 14px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */

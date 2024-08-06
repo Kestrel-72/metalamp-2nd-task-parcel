@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["style/fonts.scss","blocks/component/_component.scss","style/colors.scss","style/main.scss"],"names":[],"mappings":"AAAA;EACG;EACA;;AAIH;EACG;EACA;;ACNH;EACG,OCEM;;;ACAT;EACG;EACA,ODPc;ECQd;;;AAGH;EACG;EACA,ODbc;ECcd;;;AAGH;EACG;EACA,ODnBc;ECoBd;EACA;;;AAGH;EACG;EACA,ODzBa;EC0Bb","file":"main.css"}
