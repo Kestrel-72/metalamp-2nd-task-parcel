@@ -1,2 +1,7 @@
 @use '../blocks/component/_component';
 @use '../blocks/header/_header';
+@use '../blocks/form-elements/input-field/input-field';
+
+* {
+   box-sizing: border-box;
+}

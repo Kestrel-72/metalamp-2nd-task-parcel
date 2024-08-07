@@ -1,5 +1,6 @@
 include blocks/component/component
 include blocks/header/header
+include blocks/form-elements/text-field/text-field
 
 doctype html
 html
@@ -12,3 +13,4 @@ html
    body
       +header("This is a header!")
       +component("Roman")
+      +text-field("text", "Email", "email", "email")

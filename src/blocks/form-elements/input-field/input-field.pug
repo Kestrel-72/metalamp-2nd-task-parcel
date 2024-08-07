@@ -1,0 +1,7 @@
+include input-field__label
+include input-field__input
+
+mixin input-field(divClass, type, label, name, id)
+   div(class="input-field " + divClass)
+      +input-field__label(id, label)
+      +input-field__input(id, type, name, label)
