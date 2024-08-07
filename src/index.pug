@@ -4,8 +4,11 @@ include blocks/header/header
 doctype html
 html
    head
+      meta(charset="utf-8")
+      title Metalamp 2nd task
+      meta(name="viewport" content="initial-scale=1.0, width=device-width")
       style
          include main.css
    body
-      +header('This is a header!')
-      +component('Roman')
+      +header("This is a header!")
+      +component("Roman")
