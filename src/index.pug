@@ -1,6 +1,5 @@
-include blocks/component/component
-include blocks/header/header
 include blocks/form-elements/text-field/text-field
+include blocks/form-elements/dropdown/dropdown
 
 doctype html
 html
@@ -12,3 +11,4 @@ html
          include main.css
    body
       +text-field("text", "Email", "email", "email")
+      +dropdown("Сколько гостей", "guests", "guests")

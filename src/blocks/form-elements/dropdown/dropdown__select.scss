@@ -1,0 +1,8 @@
+@use "../../../style/fonts.scss" as *;
+
+.dropdown__select {
+   @include body-style();
+   background-color: white;
+   border-bottom-left-radius: 0; 
+   border-bottom-right-radius: 0; 
+}

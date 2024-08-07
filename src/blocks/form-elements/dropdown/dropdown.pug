@@ -1,0 +1,6 @@
+include ../input-field/input-field.pug
+include dropdown__select.pug
+
+mixin dropdown(label, name, id)
+   +input-field__label(id, label)
+   +dropdown__select(id, name)

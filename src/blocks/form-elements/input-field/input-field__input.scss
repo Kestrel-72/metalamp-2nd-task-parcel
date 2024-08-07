@@ -1,7 +1,7 @@
 @use "../../../style/colors.scss";
 @use "../../../style/fonts.scss" as *;
 
-input.input-field__input {
+.input-field__input {
    @include body-style();
    border: 1px solid colors.$dark-shade-25;
    border-radius: 4px;
@@ -11,15 +11,15 @@ input.input-field__input {
    outline: none;
 }
 
-input.input-field__input::placeholder {
+.input-field__input::placeholder {
    color: colors.$dark-shade-25;
    opacity: 1; /* Firefox */
 }
  
-input.input-field__input::-ms-input-placeholder { /* Edge 12 -18 */
+.input-field__input::-ms-input-placeholder { /* Edge 12 -18 */
    color: colors.$dark-shade-25;
 }
 
-input.input-field__input:hover, input.input-field__input:focus {
+.input-field__input:hover, .input-field__input:focus {
    border-color: colors.$dark-shade-50;
 }
