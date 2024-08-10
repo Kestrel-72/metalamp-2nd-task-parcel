@@ -1,0 +1,11 @@
+@use "../../../style/fonts.scss" as *;
+
+.dropdown__label {
+   display: flex;
+   align-items: center; 
+   justify-content: space-between;
+   background-color: white;
+   border-bottom-left-radius: 0; 
+   border-bottom-right-radius: 0;
+   cursor: pointer;
+}

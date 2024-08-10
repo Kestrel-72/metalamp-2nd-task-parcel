@@ -1,6 +1,24 @@
 include ../input-field/input-field.pug
-include dropdown__select.pug
+include dropdown__label.pug
+include ../../buttons/borderless-button.pug
+include ../../buttons/arrow-down-button.pug
 
-mixin dropdown(label, name, id)
-   +input-field__label(id, label)
-   +dropdown__select(id, name)
+- const people = [ { name: "Взрослые", value: 0 }, { name: "Дети", value: 0 }, { name: "Младенцы", value: 0 } ];
+
+mixin dropdown(label, options=people)
+   div.dropdown
+      div.dropdown__label.input-field__input
+         span #{label}
+         +arrow-down-button
+      div.dropdown__content
+         ul.dropdown__options-list
+            each option in options 
+               li.dropdown__option
+                  span #{option.name}
+                  div.dropdown__option-quantity
+                     button.dropdown__quantity-button -
+                     span #{option.value} 
+                     button.dropdown__quantity-button +
+         div.dropdown__buttons
+            +borderless-button("Применить")
+   
