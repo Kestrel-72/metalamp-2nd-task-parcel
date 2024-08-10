@@ -1,0 +1,12 @@
+@use "../../style/colors.scss";
+@use "../../style/fonts.scss" as *;
+
+.borderless-button {
+   @include h3-style();
+   background-color: transparent;
+   color:colors.$purple;
+   border: none;
+   cursor: pointer;
+   padding: 0;
+   width: fit-content;
+}
