@@ -1,15 +1,14 @@
 @use "../../../style/colors.scss";
 @use "../../../style/fonts.scss" as *;
+@use "../../../style/borders.scss" as *;
 
 .input-field__input {
    @include body-style();
-   border: 1px solid colors.$dark-shade-25;
-   border-radius: 4px;
+   @include gray-border(4px 4px 4px 4px);
    height: 44px;
    width: 320px;
    padding-left: 15px;
    padding-right: 15px;
-   outline: none;
 }
 
 .input-field__input::placeholder {
@@ -19,8 +18,4 @@
  
 .input-field__input::-ms-input-placeholder { /* Edge 12 -18 */
    color: colors.$dark-shade-25;
-}
-
-.input-field__input:hover, .input-field__input:focus {
-   border-color: colors.$dark-shade-50;
 }

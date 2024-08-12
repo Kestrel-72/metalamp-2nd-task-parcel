@@ -1,0 +1,11 @@
+@use 'colors';
+
+@mixin gray-border($border-radius) {
+   border: 1px solid colors.$dark-shade-25;
+   border-radius: $border-radius;
+   outline: none;
+
+   &:hover, &:focus {
+      border-color: colors.$dark-shade-50;
+   }
+}
