@@ -1,2 +1,5 @@
-mixin dropdown__quantity-button(label)
-   button.dropdown__quantity-button #{label}
+mixin dropdown__quantity-button(label, value)
+   if value < 1 
+      button.dropdown__quantity-button(disabled) #{label}
+   else 
+      button.dropdown__quantity-button #{label}

@@ -10,4 +10,9 @@
    color: colors.$dark-shade-50;
    font-size: 18px;
    cursor: pointer;
+
+   &:disabled {
+      opacity: 38%;
+      cursor: default;
+   }
 }
