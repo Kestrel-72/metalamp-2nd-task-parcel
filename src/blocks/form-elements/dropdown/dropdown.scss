@@ -6,7 +6,12 @@
 @use "dropdown__options-list";
 @use "dropdown__quantity-button";
 @use "../../../style/sizes.scss" as *;
+@use "../../../style/colors.scss";
 
 .dropdown {
    @include large-block();
+
+   &:hover .dropdown__label, &:hover .dropdown__content {
+      border-color: colors.$dark-shade-50;
+   }
 }
