@@ -1,5 +1,9 @@
 include ../../buttons/borderless-button.pug
 
-mixin dropdown__buttons
+mixin dropdown__buttons(options)
+   - let totalValue = options.reduce((total, current) => total + current.value, 0);
+
    div.dropdown__buttons
       +borderless-button("Применить")
+      if (totalValue > 0)
+         +borderless-button("Очистить")
