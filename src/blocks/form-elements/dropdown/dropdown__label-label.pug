@@ -1,0 +1,11 @@
+mixin dropdown__label-label(label, options, words)
+   - let totalValue = options.reduce((total, current) => total + current.value, 0);
+   
+   if totalValue == 0 
+      span.dropdown__label-label #{label}
+   else if totalValue == 1 
+      span.dropdown__label-label #{totalValue} #{words.one}
+   else if totalValue < 5
+      span.dropdown__label-label #{totalValue} #{words.upToFour}
+   else
+      span.dropdown__label-label #{totalValue} #{words.moreThanFour}

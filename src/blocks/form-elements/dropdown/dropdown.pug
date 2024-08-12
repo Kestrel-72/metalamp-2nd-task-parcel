@@ -2,9 +2,10 @@ include ../input-field/input-field.pug
 include dropdown__label.pug
 include dropdown__content.pug
 
-- const people = [ { name: "Взрослые", value: 0 }, { name: "Дети", value: 0 }, { name: "Младенцы", value: 0 } ];
+- const people = [ { name: "Взрослые", value: 1 }, { name: "Дети", value: 0 }, { name: "Младенцы", value: 2 } ];
+- const guests = { one: "гость", upToFour: "гостя", moreThanFour: "гостей" };
 
-mixin dropdown(label, options=people)
+mixin dropdown(label, options=people, words=guests)
    div.dropdown
-      +dropdown__label(label)
+      +dropdown__label(label, options, words)
       +dropdown__content(options)
