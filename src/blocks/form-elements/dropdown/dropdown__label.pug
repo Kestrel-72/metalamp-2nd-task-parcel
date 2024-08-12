@@ -1,2 +1,6 @@
+include ../../buttons/arrow-down-button.pug
+
 mixin dropdown__label(label)
-   option(class="dropdown__label") #{label}
+   div.dropdown__label.input-field__input
+      span #{label}
+      +arrow-down-button

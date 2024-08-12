@@ -1,2 +1,6 @@
-mixin dropdown__option(label)
-   option(class="dropdown__option") #{label}
+include dropdown__option-quantity.pug
+
+mixin dropdown__option(name, value)
+   li.dropdown__option
+      span.dropdown__option-name #{name}
+      +dropdown__option-quantity(value)

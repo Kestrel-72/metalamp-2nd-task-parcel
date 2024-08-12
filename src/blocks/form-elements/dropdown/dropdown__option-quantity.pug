@@ -1,0 +1,7 @@
+include dropdown__quantity-button.pug
+
+mixin dropdown__option-quantity(value)
+   div.dropdown__option-quantity
+      +dropdown__quantity-button("-")
+      span.dropdown__option-value #{value} 
+      +dropdown__quantity-button("+")

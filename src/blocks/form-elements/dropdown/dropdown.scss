@@ -1,10 +1,10 @@
-@use "dropdown__label";
-@use "dropdown__option";
-@use "dropdown__content";
-@use "dropdown__options-list";
-@use "dropdown__option-quantity";
-@use "dropdown__quantity-button";
 @use "dropdown__buttons";
+@use "dropdown__content";
+@use "dropdown__label";
+@use "dropdown__option-quantity";
+@use "dropdown__option";
+@use "dropdown__options-list";
+@use "dropdown__quantity-button";
 
 .dropdown {
    width: 320px;

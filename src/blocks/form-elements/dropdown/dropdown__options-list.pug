@@ -1,0 +1,6 @@
+include dropdown__option.pug
+
+mixin dropdown__options-list(options)
+   ul.dropdown__options-list
+      each option in options 
+         +dropdown__option(option.name, option.value)
