@@ -1,12 +1,13 @@
 @use "../../../style/colors.scss";
 @use "../../../style/fonts.scss" as *;
 @use "../../../style/borders.scss" as *;
+@use "../../../style/sizes.scss" as *;
 
 .input-field__input {
    @include body-style();
    @include gray-border(4px 4px 4px 4px);
+   @include large-block();
    height: 44px;
-   width: 320px;
    padding-left: 15px;
    padding-right: 15px;
 }

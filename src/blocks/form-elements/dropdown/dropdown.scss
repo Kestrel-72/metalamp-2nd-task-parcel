@@ -5,7 +5,8 @@
 @use "dropdown__option";
 @use "dropdown__options-list";
 @use "dropdown__quantity-button";
+@use "../../../style/sizes.scss" as *;
 
 .dropdown {
-   width: 320px;
+   @include large-block();
 }

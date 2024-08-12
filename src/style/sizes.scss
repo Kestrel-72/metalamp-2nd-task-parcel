@@ -1,0 +1,11 @@
+@mixin small-block {
+   width: 150px;
+}
+
+@mixin medium-block {
+   width: 266px;
+}
+
+@mixin large-block {
+   width: 320px;
+}
