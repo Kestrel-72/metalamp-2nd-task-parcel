@@ -1,5 +1,5 @@
-@use "../../style/colors.scss";
-@use "../../style/fonts.scss" as *;
+@use "../../../../style/colors.scss";
+@use "../../../../style/fonts.scss" as *;
 
 .borderless-button {
    @include h3-style();
