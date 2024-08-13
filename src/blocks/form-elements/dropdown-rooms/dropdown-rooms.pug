@@ -1,0 +1,15 @@
+include ../input-field/input-field.pug
+include dropdown-rooms__label.pug
+include dropdown-rooms__content.pug
+
+- 
+   const options = [ 
+      { name: "спальни", value: 5, words: { one: "спальня", upToFour: "спальни", moreThanFour: "спален" } }, 
+      { name: "кровати", value: 2, words: { one: "кровать", upToFour: "кровати", moreThanFour: "кроватей" } }, 
+      { name: "ванные комнаты", value: 0, words: { one: "ванная комната", upToFour: "ванные комнаты", moreThanFour: "ванных комнат" } } 
+   ];
+
+mixin dropdown-rooms(label, rooms=options)
+   div.dropdown-rooms
+      +dropdown-rooms__label(label, rooms)
+      +dropdown-rooms__content(rooms)

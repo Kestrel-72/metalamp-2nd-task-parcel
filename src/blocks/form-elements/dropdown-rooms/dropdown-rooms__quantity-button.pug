@@ -1,0 +1,5 @@
+mixin dropdown-rooms__quantity-button(label, value)
+   if value < 1 
+      button.dropdown-rooms__quantity-button(disabled) #{label}
+   else 
+      button.dropdown-rooms__quantity-button #{label}

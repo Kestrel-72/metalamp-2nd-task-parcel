@@ -1,0 +1,18 @@
+@use "../../../style/colors.scss";
+
+.dropdown-rooms__quantity-button {
+   background-color: transparent;
+   border-radius: 50%;
+   width: 30px;
+   height: 30px;
+   outline: none;
+   border: 1px solid colors.$dark-shade-25;
+   color: colors.$dark-shade-50;
+   font-size: 18px;
+   cursor: pointer;
+
+   &:disabled {
+      opacity: 38%;
+      cursor: default;
+   }
+}

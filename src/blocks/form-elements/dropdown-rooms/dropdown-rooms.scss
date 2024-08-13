@@ -1,0 +1,17 @@
+@use "dropdown-rooms__content";
+@use "dropdown-rooms__label-label";
+@use "dropdown-rooms__label";
+@use "dropdown-rooms__option-quantity";
+@use "dropdown-rooms__option";
+@use "dropdown-rooms__options-list";
+@use "dropdown-rooms__quantity-button";
+@use "../../../style/sizes.scss" as *;
+@use "../../../style/colors.scss";
+
+.dropdown-rooms {
+   @include medium-block();
+
+   &:hover .dropdown-rooms__label, &:hover .dropdown-rooms__content {
+      border-color: colors.$dark-shade-50;
+   }
+}

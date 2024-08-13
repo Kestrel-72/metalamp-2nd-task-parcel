@@ -1,0 +1,6 @@
+include dropdown-rooms__option-quantity.pug
+
+mixin dropdown-rooms__option(name, value)
+   li.dropdown-rooms__option
+      span.dropdown-rooms__option-name #{name}
+      +dropdown-rooms__option-quantity(value)

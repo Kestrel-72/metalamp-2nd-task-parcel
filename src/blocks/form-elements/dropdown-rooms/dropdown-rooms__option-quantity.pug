@@ -1,0 +1,7 @@
+include dropdown-rooms__quantity-button.pug
+
+mixin dropdown-rooms__option-quantity(value)
+   div.dropdown-rooms__option-quantity
+      +dropdown-rooms__quantity-button("-", value)
+      span.dropdown-rooms__option-value #{value} 
+      +dropdown-rooms__quantity-button("+")

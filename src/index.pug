@@ -1,5 +1,6 @@
 include blocks/form-elements/text-field/text-field
 include blocks/form-elements/dropdown/dropdown
+include blocks/form-elements/dropdown-rooms/dropdown-rooms
 
 doctype html
 html
@@ -12,4 +13,4 @@ html
    body
       +text-field("text", "Email", "email", "email")
       br
-      +dropdown("Сколько гостей")
+      +dropdown-rooms("Сколько комнат")

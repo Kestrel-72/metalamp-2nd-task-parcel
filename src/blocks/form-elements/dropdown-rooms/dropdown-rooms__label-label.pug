@@ -1,0 +1,18 @@
+mixin dropdown-rooms__label-label(label, rooms)
+   - 
+      let labelArray = [];
+      for (let i = 0; i < rooms.length; i++) {
+         if (rooms[i].value == 1) {
+            labelArray.push("1 " + rooms[i].words.one)
+         }
+         else if (rooms[i].value > 1 && rooms[i].value <= 4) {
+            labelArray.push(rooms[i].value + " " + rooms[i].words.upToFour)
+         }
+         else if (rooms[i].value >= 4) {
+            labelArray.push(rooms[i].value + " " + rooms[i].words.moreThanFour)
+         }
+      }
+
+      let labelString = labelArray.join(", ");
+
+   span.dropdown-rooms__label-label #{labelString}

@@ -1,0 +1,6 @@
+include dropdown-rooms__option.pug
+
+mixin dropdown-rooms__options-list(options)
+   ul.dropdown-rooms__options-list
+      each option in options 
+         +dropdown-rooms__option(option.name, option.value)

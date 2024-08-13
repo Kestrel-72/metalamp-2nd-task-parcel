@@ -1,0 +1,11 @@
+@use "../../../style/colors.scss";
+@use "../../../style/borders.scss" as *;
+
+.dropdown-rooms__content {
+   @include gray-border(0 0 4px 4px);
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   padding: 7px 7px 7px 15px;
+   border-top: none;
+}
