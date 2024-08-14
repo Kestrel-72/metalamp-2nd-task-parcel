@@ -21,7 +21,7 @@
    @include purple-border(4px 4px 4px 4px);
 }
 
-.checkbox-button__label:hover .checkbox-button__checkmark {
+.checkbox-button__label:hover .checkbox-button__input:not(:checked) ~ .checkbox-button__checkmark {
    border-color: colors.$dark-shade-50;
 }
 

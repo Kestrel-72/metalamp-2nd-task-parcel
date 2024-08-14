@@ -19,7 +19,7 @@
    display: none;
 }
 
-.radio-button__label:hover .radio-button__checkmark {
+.radio-button__label:hover .radio-button__input:not(:checked) ~ .radio-button__checkmark {
    border-color: colors.$dark-shade-50;
 }
 
