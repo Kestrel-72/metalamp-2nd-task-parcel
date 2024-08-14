@@ -4,7 +4,7 @@
 .borderless-button {
    @include h3-style();
    background-color: transparent;
-   color:colors.$purple;
+   color: colors.$purple;
    border: none;
    cursor: pointer;
    padding: 0;
