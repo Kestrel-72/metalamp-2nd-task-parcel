@@ -20,6 +20,10 @@
    @include purple-border(4px 4px 4px 4px);
 }
 
+.checkbox-button__label:hover .checkbox-button__checkmark {
+   border-color: colors.$dark-shade-50;
+}
+
 .checkbox-button__input:checked ~ .checkbox-button__checkmark:after {
    display: block;
 }
