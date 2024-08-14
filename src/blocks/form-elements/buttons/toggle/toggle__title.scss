@@ -1,0 +1,10 @@
+@use "../../../../style/fonts.scss" as *;
+
+.toggle__title {
+   width: max-content;
+   padding-left: 50px;
+   @include body-style();
+   cursor: pointer;
+   position: relative;
+   top: 1px;
+}

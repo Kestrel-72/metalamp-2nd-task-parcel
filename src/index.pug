@@ -3,6 +3,7 @@ include blocks/form-elements/dropdown/dropdown
 include blocks/form-elements/dropdown-rooms/dropdown-rooms
 include blocks/form-elements/buttons/checkbox-button/checkbox-button
 include blocks/form-elements/buttons/radio-button/radio-buttons-container
+include blocks/form-elements/buttons/toggle/toggle
 
 doctype html
 html
@@ -20,3 +21,5 @@ html
       +checkbox-button("permissions", "canSmoke", "Можно курить")
       br
       +radio-buttons-container
+      br
+      +toggle("receiveSpecialOffers", "Получать спецпредложения")
