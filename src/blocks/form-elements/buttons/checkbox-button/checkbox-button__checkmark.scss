@@ -1,0 +1,43 @@
+@use "../../../../style/borders.scss" as *;
+
+.checkbox-button__checkmark {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 20px;
+   width: 20px;
+   background-color: white;
+   @include gray-border(4px 4px 4px 4px);
+}
+
+.checkbox-button__checkmark:after {
+   content: "";
+   position: absolute;
+   display: none;
+}
+
+.checkbox-button__input:checked ~ .checkbox-button__checkmark {
+   @include purple-border();
+}
+
+.checkbox-button__input:checked ~ .checkbox-button__checkmark:after {
+   display: block;
+}
+
+.checkbox-button__checkmark:after {
+   left: 6px;
+   top: 4px;
+   width: 4px;
+   height: 6px;
+   border: solid;
+   border-width: 0 2px 2px 0;
+   -webkit-transform: rotate(45deg);
+   -ms-transform: rotate(45deg);
+   transform: rotate(45deg);
+   border-image: 
+      linear-gradient(
+      to bottom, 
+      rgba(188, 156, 255, 1), 
+      rgba(139, 164, 249, 1)
+   ) 1 1 1 1;
+}

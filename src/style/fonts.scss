@@ -36,3 +36,9 @@
    font-size: 14px;
    color: colors.$dark-shade-75;
 }
+
+@mixin checkbox-style {
+   font-family: 'montserratregular';
+   font-size: 14px;
+   color: colors.$dark-shade-50;
+}

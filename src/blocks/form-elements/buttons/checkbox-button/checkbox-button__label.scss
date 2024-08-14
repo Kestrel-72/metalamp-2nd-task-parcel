@@ -1,0 +1,16 @@
+@use "../../../../style/borders.scss" as *;
+@use "../../../../style/colors.scss";
+@use "../../../../style/fonts.scss" as *;
+
+
+.checkbox-button__label {
+   display: block;
+   position: relative;
+   padding-left: 30px;
+   cursor: pointer;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   @include checkbox-style();
+}

@@ -1,0 +1,9 @@
+@use "../../../../style/borders.scss" as *;
+
+.checkbox-button__input {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+   height: 0;
+   width: 0;
+}

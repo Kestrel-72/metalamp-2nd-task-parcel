@@ -1,0 +1,9 @@
+@use "checkbox-button__input";
+@use "checkbox-button__label";
+@use "checkbox-button__title";
+@use "checkbox-button__checkmark";
+@use "../../../../style/sizes.scss" as *;
+
+.checkbox-button {
+   @include medium-block();
+}

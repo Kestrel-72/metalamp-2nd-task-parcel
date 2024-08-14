@@ -9,3 +9,9 @@
       border-color: colors.$dark-shade-50;
    }
 }
+
+@mixin purple-border() {
+   border: 1px solid colors.$purple;
+   border-radius: 4px 4px 4px 4px;
+   outline: none;
+}

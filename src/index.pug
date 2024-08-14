@@ -1,6 +1,7 @@
 include blocks/form-elements/text-field/text-field
 include blocks/form-elements/dropdown/dropdown
 include blocks/form-elements/dropdown-rooms/dropdown-rooms
+include blocks/form-elements/buttons/checkbox-button/checkbox-button
 
 doctype html
 html
@@ -14,3 +15,7 @@ html
       +text-field("text", "Email", "email", "email")
       br
       +dropdown-rooms("Сколько комнат")
+      br
+      +checkbox-button("permissions", "canSmoke", "Можно курить")
+      +checkbox-button("permissions", "canHavePets", "Можно с питомцами")
+      +checkbox-button("permissions", "canInviteGuests", "Можно пригласить гостей", "(до 10 человек)")
