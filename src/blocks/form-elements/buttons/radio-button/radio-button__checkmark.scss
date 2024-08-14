@@ -1,3 +1,4 @@
+@use "../../../../style/colors.scss";
 @use "../../../../style/borders.scss" as *;
 @use "../../../../style/fonts.scss" as *;
 
@@ -16,6 +17,10 @@
    content: "";
    position: absolute;
    display: none;
+}
+
+.radio-button__label:hover .radio-button__checkmark {
+   border-color: colors.$dark-shade-50;
 }
 
 /* Show the indicator (dot/circle) when checked */
