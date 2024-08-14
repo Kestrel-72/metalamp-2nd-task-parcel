@@ -1,0 +1,9 @@
+@use "../../../../style/fonts.scss" as *;
+
+.radio-button__title {
+   @include checkbox-style();
+}
+
+.radio-button__input:checked ~ .radio-button__title {
+   @include body-style();
+}

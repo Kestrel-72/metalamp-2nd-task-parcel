@@ -10,8 +10,8 @@
    }
 }
 
-@mixin purple-border() {
+@mixin purple-border($border-radius) {
    border: 1px solid colors.$purple;
-   border-radius: 4px 4px 4px 4px;
+   border-radius: $border-radius;
    outline: none;
 }

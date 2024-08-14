@@ -1,0 +1,9 @@
+@use "radio-button__input";
+@use "radio-button__label";
+@use "radio-button__title";
+@use "radio-button__checkmark";
+
+.radio-button {
+   padding: 0 0 7px 0;
+   width: max-content;
+}

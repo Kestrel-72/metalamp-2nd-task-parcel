@@ -17,7 +17,7 @@
 }
 
 .checkbox-button__input:checked ~ .checkbox-button__checkmark {
-   @include purple-border();
+   @include purple-border(4px 4px 4px 4px);
 }
 
 .checkbox-button__input:checked ~ .checkbox-button__checkmark:after {
