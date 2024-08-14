@@ -2,8 +2,10 @@
 @use "checkbox-button__label";
 @use "checkbox-button__title";
 @use "checkbox-button__checkmark";
+@use "checkbox-buttons-container";
 @use "../../../../style/sizes.scss" as *;
 
 .checkbox-button {
    @include medium-block();
+   padding-bottom: 3px;
 }

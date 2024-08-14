@@ -1,0 +1,26 @@
+include checkbox-button.pug
+
+- let permissionsName = "permissions";
+- 
+   let permissionsCheckboxesList = [
+      {
+         value: "smokingAllowed",
+         firstLabelLine: "Можно курить",
+         secondLabelLine: ""
+      },
+      {
+         value: "petsAllowed",
+         firstLabelLine: "Можно с питомцами",
+         secondLabelLine: ""
+      },
+      {
+         value: "guestsAllowed",
+         firstLabelLine: "Можно пригласить гостей",
+         secondLabelLine: "(до 10 человек)"
+      }
+   ]
+
+mixin checkbox-buttons-container(name=permissionsName, checkboxesList=permissionsCheckboxesList)
+   div.checkbox-buttons-container
+      each checkbox in checkboxesList 
+         +checkbox-button(name, checkbox.value, checkbox.firstLabelLine, checkbox.secondLabelLine)

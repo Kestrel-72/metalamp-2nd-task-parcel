@@ -1,7 +1,7 @@
 include blocks/form-elements/text-field/text-field
 include blocks/form-elements/dropdown/dropdown
 include blocks/form-elements/dropdown-rooms/dropdown-rooms
-include blocks/form-elements/buttons/checkbox-button/checkbox-button
+include blocks/form-elements/buttons/checkbox-button/checkbox-buttons-container
 include blocks/form-elements/buttons/radio-button/radio-buttons-container
 include blocks/form-elements/buttons/toggle/toggle
 
@@ -18,7 +18,7 @@ html
       br
       +dropdown-rooms("Сколько комнат")
       br
-      +checkbox-button("permissions", "canSmoke", "Можно курить")
+      +checkbox-buttons-container 
       br
       +radio-buttons-container
       br

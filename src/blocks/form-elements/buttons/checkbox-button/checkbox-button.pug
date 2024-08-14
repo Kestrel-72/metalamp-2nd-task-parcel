@@ -8,5 +8,5 @@ mixin checkbox-button(name, value, firstLabel, secondLabel)
                | #{secondLabel}
          else 
             p.checkbox-button__title #{firstLabel}
-         input.checkbox-button__input(type="checkbox" name=name)
+         input.checkbox-button__input(type="checkbox" name=name value=value)
          span.checkbox-button__checkmark
