@@ -42,3 +42,9 @@
    font-size: 14px;
    color: colors.$dark-shade-50;
 }
+
+@mixin like-button-style {
+   font-family: 'montserratregular';
+   font-size: 10px;
+   color: colors.$dark-shade-25;
+}

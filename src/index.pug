@@ -4,6 +4,7 @@ include blocks/form-elements/dropdown-rooms/dropdown-rooms
 include blocks/form-elements/buttons/checkbox-button/checkbox-buttons-container
 include blocks/form-elements/buttons/radio-button/radio-buttons-container
 include blocks/form-elements/buttons/toggle/toggle
+include blocks/form-elements/buttons/like-button/like-button
 
 doctype html
 html
@@ -14,6 +15,8 @@ html
       style
          include main.css
    body
+      +like-button(12)
+      br
       +text-field("text", "Email", "email", "email")
       br
       +dropdown-rooms("Сколько комнат")
@@ -23,3 +26,5 @@ html
       +radio-buttons-container
       br
       +toggle("receiveSpecialOffers", "Получать спецпредложения")
+      br
+      

@@ -1,0 +1,26 @@
+@use "like-button__count";
+@use "like-button__heart";
+
+@use "../../../../style/borders.scss" as *;
+@use "../../../../style/fonts.scss" as *;
+@use "../../../../style/colors.scss";
+
+.like-button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 40px;
+   height: 20px;
+   @include gray-border(10px 10px 10px 10px);
+   @include like-button-style();
+   background-color: white;
+   cursor: pointer;
+}
+
+.like-button:hover .like-button__count {
+   color: colors.$dark-shade-50;
+}
+
+.like-button:hover .like-button__heart {
+   color: colors.$dark-shade-50;
+}
