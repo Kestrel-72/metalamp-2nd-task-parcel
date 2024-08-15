@@ -5,6 +5,7 @@ include blocks/form-elements/buttons/checkbox-button/checkbox-buttons-container
 include blocks/form-elements/buttons/radio-button/radio-buttons-container
 include blocks/form-elements/buttons/toggle/toggle
 include blocks/form-elements/buttons/like-button/like-button
+include blocks/form-elements/buttons/rate-buttons/rate-buttons
 
 doctype html
 html
@@ -15,6 +16,8 @@ html
       style
          include main.css
    body
+      +rate-buttons(3)
+      br
       +like-button(12)
       br
       +text-field("text", "Email", "email", "email")

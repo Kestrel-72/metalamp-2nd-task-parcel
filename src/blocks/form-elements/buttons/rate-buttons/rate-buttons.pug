@@ -1,0 +1,9 @@
+include rate-buttons__star_full
+include rate-buttons__star
+
+mixin rate-buttons(stars)
+   div.rate-buttons
+      - for (let i = 0; i < stars; i++)
+         +rate-buttons__star_full
+      -for (let i = 0; i < 5 - stars; i++)
+         +rate-buttons__star
