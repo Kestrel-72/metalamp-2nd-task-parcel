@@ -1,18 +1,14 @@
 mixin range-slider
-   <div class="wrapper">
-      <div class="values">
-         <span id="range1">
-            0
-         </span>
-         <span> &dash; </span>
-         <span id="range2">
-            100
-         </span>
-      </div>
-      <div class="container">
-         <div class="slider-track"></div>
-         <input type="range" min="0" max="100" value="30" id="slider-1">
-         <input type="range" min="0" max="100" value="70" id="slider-2">
-      </div>
-   </div>
+   .range-slider
+      .range-slider__values
+         span#range1
+            | 0
+         span -
+         span#range2
+            | 100
+      .range-slider__container
+         .range-slider__track
+            input#slider-1(type='range' min='0' max='15000' value='5000' step='1000')
+            input#slider-2(type='range' min='0' max='15000' value='10000' step='1000')
+            
       

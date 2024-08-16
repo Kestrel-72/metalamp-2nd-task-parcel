@@ -8,8 +8,8 @@ export function rangeSlider() {
    let sliderTwo = document.getElementById("slider-2");
    let displayValOne = document.getElementById("range1");
    let displayValTwo = document.getElementById("range2");
-   let minGap = 0;
-   let sliderTrack = document.querySelector(".slider-track");
+   let minGap = 1000;
+   let sliderTrack = document.querySelector(".range-slider__track");
    let sliderMaxValue = document.getElementById("slider-1").max;
 
    sliderOne.addEventListener("input", slideOne);
@@ -32,7 +32,19 @@ export function rangeSlider() {
    function fillColor() {
       percent1 = (sliderOne.value / sliderMaxValue) * 100;
       percent2 = (sliderTwo.value / sliderMaxValue) * 100;
-      sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+      sliderTrack.style.background = 
+      `linear-gradient(
+         to right, 
+         rgba(255, 255, 255, 1) ${percent1}% , 
+         rgba(0, 0, 0, 0) ${percent1}% , 
+         rgba(0, 0, 0, 0) ${percent2}%, 
+         rgba(255, 255, 255, 1) ${percent2}%
+      ),
+      linear-gradient(
+         to bottom,
+         #6FCF97,
+         #66D2EA
+      )`;
    }
  
 }
