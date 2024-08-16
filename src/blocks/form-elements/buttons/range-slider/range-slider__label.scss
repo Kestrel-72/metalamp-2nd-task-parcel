@@ -1,0 +1,5 @@
+@use "../../../../style/fonts.scss" as *;
+
+.range-slider__label {
+   @include h3-style();
+}

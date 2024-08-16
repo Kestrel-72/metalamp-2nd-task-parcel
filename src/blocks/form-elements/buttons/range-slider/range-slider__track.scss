@@ -1,0 +1,82 @@
+@use "../../../../style/colors.scss";
+@use "../../../../style/sizes.scss" as *;
+
+$slider-thumb-size: 12px;
+
+.range-slider__track {
+   @include medium-block();
+   height: 6px;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   bottom: 0;
+   border: 1px solid transparent;
+   border-radius: 3px;
+}
+
+.range-slider__input {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   width: 100%;
+   outline: none;
+   position: absolute;
+   margin: auto;
+   top: 0;
+   bottom: 0;
+   background-color: transparent;
+   pointer-events: none;
+}
+
+.range-slider__input::-webkit-slider-runnable-track {
+   -webkit-appearance: none;
+   height: 5px;
+}
+
+.range-slider__input::-moz-range-track {
+   -moz-appearance: none;
+   height: 5px;
+}
+
+.range-slider__input::-ms-track {
+   appearance: none;
+   height: 5px;
+}
+
+.range-slider__input::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   height: $slider-thumb-size;
+   width: $slider-thumb-size;
+   background: colors.$green-blue-gradient;
+   cursor: pointer;
+   margin-top: -4px;
+   pointer-events: auto;
+   box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 1);
+   border-radius: 50%;
+}
+
+.range-slider__input::-moz-range-thumb {
+   appearance: none;
+   -webkit-appearance: none;
+   height: $slider-thumb-size;
+   width: $slider-thumb-size;
+   cursor: pointer;
+   border-radius: 50%;
+   background: colors.$green-blue-gradient;
+   pointer-events: auto;
+   border: none;
+}
+
+.range-slider__input::-ms-thumb {
+   appearance: none;
+   height: $slider-thumb-size;
+   width: $slider-thumb-size;
+   cursor: pointer;
+   border-radius: 50%;
+   background: colors.$green-blue-gradient;
+   pointer-events: auto;
+}
+
+.range-slider__input:active::-webkit-slider-thumb {
+   background: colors.$green-blue-gradient;
+}

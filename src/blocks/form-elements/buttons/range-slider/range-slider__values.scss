@@ -1,0 +1,6 @@
+@use "../../../../style/fonts.scss" as *;
+
+.range-slider__values {
+   @include range-slider-style();
+   text-align: right;
+}

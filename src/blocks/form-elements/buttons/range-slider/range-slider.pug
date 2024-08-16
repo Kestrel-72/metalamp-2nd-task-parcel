@@ -1,14 +1,16 @@
-mixin range-slider
+mixin range-slider(label, maxValue)
    .range-slider
-      .range-slider__values
-         span#range1
-            | 0
-         span -
-         span#range2
-            | 100
+      .range-slider__top
+         .range-slider__label #{label}
+         .range-slider__values
+            span.range-slider__value-1
+               | 0
+            span - 
+            span.range-slider__value-2
+               | 100
       .range-slider__container
          .range-slider__track
-            input#slider-1(type='range' min='0' max='15000' value='5000' step='1000')
-            input#slider-2(type='range' min='0' max='15000' value='10000' step='1000')
+            input#slider-1.range-slider__input(type='range' min='0' max=maxValue value='5000' step='1000')
+            input#slider-2.range-slider__input(type='range' min='0' max=maxValue value='10000' step='1000')
             
       
