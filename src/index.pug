@@ -6,6 +6,7 @@ include blocks/form-elements/buttons/radio-button/radio-buttons-container
 include blocks/form-elements/buttons/toggle/toggle
 include blocks/form-elements/buttons/like-button/like-button
 include blocks/form-elements/buttons/rate-buttons/rate-buttons
+include blocks/form-elements/buttons/range-slider/range-slider
 
 doctype html
 html
@@ -13,21 +14,24 @@ html
       meta(charset="utf-8")
       title Metalamp 2nd task
       meta(name="viewport" content="initial-scale=1.0, width=device-width")
+      script(src="main.js" type="module" defer) 
       style
          include main.css
    body
-      +rate-buttons(3)
       br
-      +like-button(12)
-      br
-      +text-field("text", "Email", "email", "email")
-      br
-      +dropdown-rooms("Сколько комнат")
-      br
-      +checkbox-buttons-container 
-      br
-      +radio-buttons-container
-      br
-      +toggle("receiveSpecialOffers", "Получать спецпредложения")
-      br
+      +range-slider
+      //- +rate-buttons(3)
+      //- br
+      //- +like-button(12)
+      //- br
+      //- +text-field("text", "Email", "email", "email")
+      //- br
+      //- +dropdown-rooms("Сколько комнат")
+      //- br
+      //- +checkbox-buttons-container 
+      //- br
+      //- +radio-buttons-container
+      //- br
+      //- +toggle("receiveSpecialOffers", "Получать спецпредложения")
+      //- br
       
