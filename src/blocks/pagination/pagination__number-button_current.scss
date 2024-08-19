@@ -1,0 +1,11 @@
+@use "../../style/colors.scss";
+@use "../../style/fonts.scss" as *;
+
+button.pagination__number-button_current {
+   @include pagination-number-current-style();
+   background: colors.$purple-blue-gradient();
+
+   &:hover {
+      opacity: 50%;
+   }
+}

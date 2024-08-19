@@ -1,0 +1,11 @@
+include pagination__number-button
+include pagination__forward-button
+
+mixin pagination__navigation
+   .pagination__navigation
+      +pagination__number-button(1, true)
+      +pagination__number-button(2, false)
+      +pagination__number-button(3, false)
+      +pagination__number-button("...", false)
+      +pagination__number-button(15, false)
+      +pagination__forward-button

@@ -1,0 +1,18 @@
+@use "../../style/fonts.scss" as *;
+@use "../../style/colors.scss";
+@use "../../style/sizes.scss" as *;
+
+.pagination__number-button {
+   @include circle-button-size();
+   @include h3-style();
+   @include pagination-number-style();
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: none;
+   color: colors.$dark-shade-50;
+   border: none;
+   border-radius: 24px;
+   outline: none;
+   cursor: pointer;
+}

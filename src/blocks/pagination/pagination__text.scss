@@ -1,0 +1,5 @@
+@use "../../style/fonts.scss" as *;
+
+.pagination__text {
+   @include body-style();
+}

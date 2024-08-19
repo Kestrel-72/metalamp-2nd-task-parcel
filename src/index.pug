@@ -10,6 +10,7 @@ include blocks/form-elements/buttons/range-slider/range-slider
 include blocks/form-elements/buttons/whole-button/whole-button
 include blocks/form-elements/buttons/border-button/border-button
 include blocks/form-elements/buttons/large-button/large-button
+include blocks/pagination/pagination
 
 doctype html
 html
@@ -21,6 +22,7 @@ html
       style
          include main.css
    body
+      +pagination
       br
       +range-slider("Диапазон цены", 15000)
       br

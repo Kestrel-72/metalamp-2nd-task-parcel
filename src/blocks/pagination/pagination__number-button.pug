@@ -1,0 +1,5 @@
+mixin pagination__number-button(label, isCurrent)
+   if isCurrent 
+      button.pagination__number-button_current.pagination__number-button #{label}
+   else 
+      button.pagination__number-button #{label}

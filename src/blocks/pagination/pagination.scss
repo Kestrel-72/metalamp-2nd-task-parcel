@@ -1,0 +1,13 @@
+@use "pagination__forward-button";
+@use "pagination__navigation";
+@use "pagination__number-button_current";
+@use "pagination__number-button";
+@use "pagination__text";
+
+.pagination {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   width: max-content;
+}
