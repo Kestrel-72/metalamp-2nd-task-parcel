@@ -7,6 +7,8 @@ include blocks/form-elements/buttons/toggle/toggle
 include blocks/form-elements/buttons/like-button/like-button
 include blocks/form-elements/buttons/rate-buttons/rate-buttons
 include blocks/form-elements/buttons/range-slider/range-slider
+include blocks/form-elements/buttons/whole-button/whole-button
+include blocks/form-elements/buttons/border-button/border-button
 
 doctype html
 html
@@ -20,6 +22,10 @@ html
    body
       br
       +range-slider("Диапазон цены", 15000)
+      br
+      +whole-button("click me")
+      br
+      +border-button("click me")
       //- +rate-buttons(3)
       //- br
       //- +like-button(12)

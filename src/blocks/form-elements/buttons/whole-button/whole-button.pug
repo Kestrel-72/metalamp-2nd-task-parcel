@@ -1,0 +1,5 @@
+mixin whole-button(label, isHollow=false)
+   if isHollow==false
+      button.whole-button #{label}
+   else 
+      button.whole-button.whole-button_hollow #{label}

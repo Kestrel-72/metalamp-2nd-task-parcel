@@ -1,0 +1,23 @@
+@use "../../../../style/colors.scss";
+@use "../../../../style/fonts.scss" as *;
+@use "../../../../style/sizes.scss" as *;
+
+.border-button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   @include whole-button-size();
+   @include h3-style();
+   border-radius: 24px;
+   cursor: pointer;
+   color: colors.$purple;
+   background-color: white;
+   border: double 2px transparent;
+   background-image: linear-gradient(white, white), radial-gradient(circle at top, #BC9CFF,#8BA4F9);
+   background-origin: border-box;
+   background-clip: padding-box, border-box;
+
+   &:hover {
+      background-image: linear-gradient(white, white), radial-gradient(circle at top, hsla(259, 100%, 81%, 0.5),hsla(226, 90%, 76%, 0.5));
+   }
+}

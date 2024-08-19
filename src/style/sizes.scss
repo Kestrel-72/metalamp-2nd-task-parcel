@@ -9,3 +9,8 @@
 @mixin large-block {
    width: 320px;
 }
+
+@mixin whole-button-size {
+   width: 99px;
+   height: 44px;
+}
