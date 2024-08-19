@@ -6,7 +6,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   @include whole-button-size();
+   @include small-button-size();
    @include h3-style();
    border-radius: 24px;
    cursor: pointer;

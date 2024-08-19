@@ -6,7 +6,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   @include whole-button-size();
+   @include small-button-size();
    @include h3-style();
    color: white;
    background: colors.$purple-blue-gradient();
