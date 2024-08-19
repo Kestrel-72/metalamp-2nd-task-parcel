@@ -9,6 +9,7 @@ include blocks/form-elements/buttons/rate-buttons/rate-buttons
 include blocks/form-elements/buttons/range-slider/range-slider
 include blocks/form-elements/buttons/whole-button/whole-button
 include blocks/form-elements/buttons/border-button/border-button
+include blocks/form-elements/buttons/large-button/large-button
 
 doctype html
 html
@@ -26,6 +27,8 @@ html
       +whole-button("click me")
       br
       +border-button("click me")
+      br
+      +large-button("перейти к оплате", "go")
       //- +rate-buttons(3)
       //- br
       //- +like-button(12)

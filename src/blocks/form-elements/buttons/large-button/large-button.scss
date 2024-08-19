@@ -1,0 +1,21 @@
+@use "large-button__label";
+@use "large-button__arrow";
+
+@use "../../../../style/colors.scss";
+@use "../../../../style/sizes.scss" as *;
+
+.large-button {
+   display: grid;
+   grid-template-columns: 1fr 44px;
+   grid-template-rows: 1fr 1fr 1fr;
+   @include large-button-size();
+   background: colors.$purple-blue-gradient();
+   border: none;
+   border-radius: 24px;
+   outline: none;
+   cursor: pointer;
+
+   &:hover {
+      opacity: 50%;
+   }
+}

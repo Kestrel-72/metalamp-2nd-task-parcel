@@ -1,0 +1,7 @@
+include ../arrow-forward-button/arrow-forward-button
+include large-button__label
+
+mixin large-button(label, id)
+   div.large-button
+      +large-button__label(label, id)
+      +arrow-forward-button(id, "large-button__arrow")

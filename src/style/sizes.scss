@@ -13,4 +13,11 @@
 @mixin small-button-size {
    width: 99px;
    height: 44px;
+   border-radius: 24px;
+}
+
+@mixin large-button-size {
+   width: 320px;
+   height: 44px;
+   border-radius: 24px;
 }
