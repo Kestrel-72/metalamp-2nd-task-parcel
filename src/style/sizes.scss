@@ -1,12 +1,12 @@
-@mixin small-block {
+@mixin small-width {
    width: 150px;
 }
 
-@mixin medium-block {
+@mixin medium-width {
    width: 266px;
 }
 
-@mixin large-block {
+@mixin large-width {
    width: 320px;
 }
 

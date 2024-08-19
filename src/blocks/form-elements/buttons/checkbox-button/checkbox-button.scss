@@ -6,6 +6,6 @@
 @use "../../../../style/sizes.scss" as *;
 
 .checkbox-button {
-   @include medium-block();
+   @include medium-width();
    padding-bottom: 3px;
 }

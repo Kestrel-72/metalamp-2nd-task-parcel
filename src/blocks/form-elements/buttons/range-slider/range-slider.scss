@@ -7,6 +7,6 @@
 @use "../../../../style/sizes.scss" as *;
 
 .range-slider {
-   @include medium-block();
+   @include medium-width();
    padding-bottom: 33px;
 }

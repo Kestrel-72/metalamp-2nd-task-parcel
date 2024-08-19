@@ -4,7 +4,7 @@
 $slider-thumb-size: 12px;
 
 .range-slider__track {
-   @include medium-block();
+   @include medium-width();
    height: 6px;
    position: absolute;
    margin: auto;

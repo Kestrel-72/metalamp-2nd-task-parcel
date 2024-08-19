@@ -9,7 +9,7 @@
 @use "../../../style/colors.scss";
 
 .dropdown {
-   @include large-block();
+   @include large-width();
 
    &:hover .dropdown__label, &:hover .dropdown__content {
       border-color: colors.$dark-shade-50;

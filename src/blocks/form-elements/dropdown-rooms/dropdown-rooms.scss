@@ -9,7 +9,7 @@
 @use "../../../style/colors.scss";
 
 .dropdown-rooms {
-   @include medium-block();
+   @include medium-width();
 
    &:hover .dropdown-rooms__label, &:hover .dropdown-rooms__content {
       border-color: colors.$dark-shade-50;

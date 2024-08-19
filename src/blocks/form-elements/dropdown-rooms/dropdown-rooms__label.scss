@@ -2,7 +2,7 @@
 @use "../../../style/sizes.scss" as *;
 
 .dropdown-rooms__label {
-   @include medium-block();
+   @include medium-width();
    display: flex;
    align-items: center; 
    justify-content: space-between;

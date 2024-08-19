@@ -6,7 +6,7 @@
 .input-field__input {
    @include body-style();
    @include gray-border(4px 4px 4px 4px);
-   @include large-block();
+   @include large-width();
    height: 44px;
    padding-left: 15px;
    padding-right: 15px;
