@@ -1,0 +1,5 @@
+@use "../../../style/fonts.scss" as *;
+
+.expandable-checkbox-list__header-label {
+   @include h3-style();
+}

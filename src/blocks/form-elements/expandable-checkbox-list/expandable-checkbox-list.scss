@@ -1,0 +1,10 @@
+@use "expandable-checkbox-list__header";
+@use "expandable-checkbox-list__header-label";
+
+@use "../../../style/sizes.scss" as *; 
+
+.expandable-checkbox-list {
+   display: flex;
+   flex-direction: column;
+   @include medium-width();
+}

@@ -1,0 +1,7 @@
+.expandable-checkbox-list__header {
+   display: grid;
+   grid-template-columns: 1fr 44px;
+   grid-template-rows: 44px;
+   align-items: center;
+   cursor: pointer;
+}

@@ -1,0 +1,6 @@
+include ../buttons/arrow-down-button/arrow-down-button
+
+mixin expandable-checkbox-list__header(label, id) 
+   div.expandable-checkbox-list__header
+      div.expandable-checkbox-list__header-label #{label}
+      +arrow-down-button(id)

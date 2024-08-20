@@ -11,6 +11,7 @@ include blocks/form-elements/buttons/whole-button/whole-button
 include blocks/form-elements/buttons/border-button/border-button
 include blocks/form-elements/buttons/large-button/large-button
 include blocks/pagination/pagination
+include blocks/form-elements/expandable-checkbox-list/expandable-checkbox-list
 
 doctype html
 html
@@ -22,22 +23,24 @@ html
       style
          include main.css
    body
-      +pagination
       br
-      +range-slider("Диапазон цены", 15000)
-      br
-      +whole-button("click me")
-      br
-      +border-button("click me")
-      br
-      +large-button("перейти к оплате", "go")
+      +expandable-checkbox-list("expandable checkbox list", "expandCheckbox")
+      //- +pagination
+      //- br
+      //- +range-slider("Диапазон цены", 15000)
+      //- br
+      //- +whole-button("click me")
+      //- br
+      //- +border-button("click me")
+      //- br
+      //- +large-button("перейти к оплате", "go")
       //- +rate-buttons(3)
       //- br
       //- +like-button(12)
       //- br
       //- +text-field("text", "Email", "email", "email")
       //- br
-      +dropdown
+      //- +dropdown
       //- br
       //- +checkbox-buttons-container 
       //- br

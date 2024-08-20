@@ -1,0 +1,8 @@
+include expandable-checkbox-list__header
+include ../buttons/checkbox-button/checkbox-buttons-container.pug
+
+mixin expandable-checkbox-list(label, id, checkboxName, checkboxList)
+   div.expandable-checkbox-list
+      +expandable-checkbox-list__header(label, id)
+      div.expandable-checkbox-list__buttons-container
+         +checkbox-buttons-container
