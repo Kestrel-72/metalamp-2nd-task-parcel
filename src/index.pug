@@ -12,6 +12,7 @@ include blocks/form-elements/buttons/border-button/border-button
 include blocks/form-elements/buttons/large-button/large-button
 include blocks/pagination/pagination
 include blocks/form-elements/expandable-checkbox-list/expandable-checkbox-list
+include blocks/bullet-list/bullet-list
 
 - 
    var richCheckboxesList = [
@@ -40,6 +41,7 @@ html
          include main.css
    body
       br
+      +bullet-list
       //- +expandable-checkbox-list("expandable checkbox list", "expandCheckbox")
       //- +pagination
       //- br
@@ -58,7 +60,7 @@ html
       //- br
       //- +dropdown
       //- br
-      +checkbox-buttons-container("richCheckboxes", richCheckboxesList)
+      //- +checkbox-buttons-container("richCheckboxes", richCheckboxesList)
       //- br
       //- +radio-buttons-container
       //- br

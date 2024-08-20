@@ -1,0 +1,5 @@
+@use "../../style/fonts.scss" as *;
+
+.bullet-list-item__label {
+   @include body-style();
+}
