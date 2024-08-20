@@ -1,0 +1,15 @@
+@use "../../../../style/fonts.scss" as *;
+
+.checkbox-button__title_rich  {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.checkbox-button__title_rich .checkbox-button__title-first-line {
+   @include rich-checkbox-title-first-line-style();
+}
+
+.checkbox-button__title_rich .checkbox-button__title-second-line {
+   @include rich-checkbox-title-second-line-style();
+}

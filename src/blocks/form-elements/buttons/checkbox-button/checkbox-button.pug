@@ -1,11 +1,15 @@
-mixin checkbox-button(name, value, firstLabel, secondLabel)
+mixin checkbox-button(name, value, firstLabel, secondLabel, isRich)
    .checkbox-button 
       label.checkbox-button__label
-         if secondLabel 
-            p.checkbox-button__title 
-               | #{firstLabel}
-               br
-               | #{secondLabel}
+         if secondLabel
+            if isRich
+               div.checkbox-button__title_rich.checkbox-button__title
+                  p.checkbox-button__title-first-line  #{firstLabel}
+                  p.checkbox-button__title-second-line #{secondLabel}
+            else 
+               div.checkbox-button__title 
+                  p.checkbox-button__title-first-line  #{firstLabel}
+                  p.checkbox-button__title-second-line #{secondLabel}
          else 
             p.checkbox-button__title #{firstLabel}
          input.checkbox-button__input(type="checkbox" name=name value=value)

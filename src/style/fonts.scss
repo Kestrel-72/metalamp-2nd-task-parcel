@@ -61,9 +61,22 @@
    color: colors.$dark-shade-50;
 }
 
+@mixin rich-checkbox-title-second-line-style {
+   font-family: 'montserratregular';
+   font-size: 12px;
+   color: colors.$dark-shade-50;
+}
+
 @mixin pagination-number-current-style {
    font-family: 'montserratregular';
    font-size: 12px;
    color: white;
+   font-weight: 700;
+}
+
+@mixin rich-checkbox-title-first-line-style {
+   font-family: 'montserratregular';
+   font-size: 14px;
+   color: colors.$dark-shade-75;
    font-weight: 700;
 }

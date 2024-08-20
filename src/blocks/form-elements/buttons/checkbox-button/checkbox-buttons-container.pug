@@ -6,21 +6,24 @@ include checkbox-button.pug
       {
          value: "smokingAllowed",
          firstLabelLine: "Можно курить",
-         secondLabelLine: ""
+         secondLabelLine: "",
+         isRich: false
       },
       {
          value: "petsAllowed",
          firstLabelLine: "Можно с питомцами",
-         secondLabelLine: ""
+         secondLabelLine: "",
+         isRich: false
       },
       {
          value: "guestsAllowed",
          firstLabelLine: "Можно пригласить гостей",
-         secondLabelLine: "(до 10 человек)"
+         secondLabelLine: "(до 10 человек)",
+         isRich: false
       }
    ]
 
 mixin checkbox-buttons-container(name=permissionsName, checkboxesList=permissionsCheckboxesList)
    div.checkbox-buttons-container
       each checkbox in checkboxesList 
-         +checkbox-button(name, checkbox.value, checkbox.firstLabelLine, checkbox.secondLabelLine)
+         +checkbox-button(name, checkbox.value, checkbox.firstLabelLine, checkbox.secondLabelLine, checkbox.isRich)
