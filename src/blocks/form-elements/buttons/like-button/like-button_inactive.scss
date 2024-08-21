@@ -1,0 +1,7 @@
+@use "../../../../style/borders.scss" as *;
+@use "../../../../style/fonts.scss" as *;
+
+.like-button_inactive {
+   @include gray-border(10px 10px 10px 10px);
+   @include inactive-like-button-style();
+}

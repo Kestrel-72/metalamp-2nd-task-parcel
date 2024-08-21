@@ -1,5 +1,11 @@
-mixin like-button(count) 
-   button.like-button 
-      div.like-button__heart 
-         include ../../../../svg/heart_border.svg
-      div.like-button__count #{count}
+mixin like-button(count, isLiked)
+   if isLiked 
+      button.like-button.like-button_active
+         div.like-button__heart 
+            include ../../../../svg/favorite.svg
+         div.like-button__count #{count}
+   else 
+      button.like-button.like-button_inactive
+         div.like-button__heart 
+            include ../../../../svg/favorite_border.svg
+         div.like-button__count #{count}

@@ -1,0 +1,7 @@
+@use "../../../../style/borders.scss" as *;
+@use "../../../../style/fonts.scss" as *;
+
+.like-button_active {
+   @include purple-border(10px 10px 10px 10px);
+   @include active-like-button-style();
+}
