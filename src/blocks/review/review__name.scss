@@ -1,8 +1,7 @@
 @use "../../style/fonts.scss" as *;
 
 .review__name {
-   @include body-style();
-   font-weight: 700;
+   @include bold-body-style();
    grid-column: 2 / 3;
    grid-row: 1 / 2;
 }

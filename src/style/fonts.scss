@@ -37,6 +37,12 @@
    color: colors.$dark-shade-75;
 }
 
+@mixin bold-body-style {
+   font-family: 'montserratbold';
+   font-size: 14px;
+   color: colors.$dark-shade-75;
+}
+
 @mixin checkbox-style {
    font-family: 'montserratregular';
    font-size: 14px;
@@ -81,8 +87,7 @@
 }
 
 @mixin rich-checkbox-title-first-line-style {
-   font-family: 'montserratregular';
+   font-family: 'montserratbold';
    font-size: 14px;
    color: colors.$dark-shade-75;
-   font-weight: 700;
 }
