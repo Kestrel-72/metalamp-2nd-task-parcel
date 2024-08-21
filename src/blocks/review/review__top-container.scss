@@ -1,0 +1,7 @@
+.review__top-container {
+   display: grid;
+   grid-template-columns: 48px 1fr;
+   grid-template-rows: 1fr 1fr;
+   align-items: center;
+   column-gap: 10px;
+}

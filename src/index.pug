@@ -13,6 +13,7 @@ include blocks/form-elements/buttons/large-button/large-button
 include blocks/pagination/pagination
 include blocks/form-elements/expandable-checkbox-list/expandable-checkbox-list
 include blocks/bullet-list/bullet-list
+include blocks/review/review
 include blocks/apartment-feature/apartment-feature-container
 
 - 
@@ -41,7 +42,8 @@ html
       style
          include main.css
    body
-      +apartment-feature-container
+      +review
+      //- +apartment-feature-container
       br
       //- +bullet-list
       //- +expandable-checkbox-list("expandable checkbox list", "expandCheckbox")

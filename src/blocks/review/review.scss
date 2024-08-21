@@ -1,0 +1,14 @@
+@use "review__top-container";
+@use "review__bottom-container";
+@use "review__date";
+@use "review__img";
+@use "review__name";
+@use "review__likes";
+@use "review__text";
+
+.review {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+   width: 711px;
+}

@@ -1,0 +1,25 @@
+include review__img
+include review__name
+include review__date
+include review__text
+include ../form-elements/buttons/like-button/like-button
+
+- 
+   var defaultReview = {
+      imgUrl: "img/review_1.webp",
+      name: "Мурад Сарафанов",
+      date: "5 дней назад",
+      likes: 12,
+      text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+   }
+
+mixin review(review=defaultReview)
+   .review
+      .review__top-container
+         +review__img(review.imgUrl)
+         +review__name(review.name)
+         +review__date(review.date)
+      .review__bottom-container
+         .review__likes
+            +like-button(review.likes)
+         +review__text(review.text)

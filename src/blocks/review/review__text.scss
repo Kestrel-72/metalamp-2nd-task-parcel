@@ -1,0 +1,7 @@
+@use "../../style/fonts.scss" as *;
+
+.review__text {
+   @include body-style();
+   grid-column: 2 / 3;
+   grid-row: 1 / 2;
+}
