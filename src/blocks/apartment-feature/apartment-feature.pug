@@ -1,0 +1,11 @@
+mixin apartment-feature(icon, header, subheader)
+   div.apartment-feature
+      div.apartment-feature__icon
+         if icon == "insert_emoticon"
+            include ../../svg/insert_emoticon.svg
+         if icon == "location_city"
+            include ../../svg/location_city.svg
+         if icon == "whatshot"
+            include ../../svg/whatshot.svg
+      div.apartment-feature__header #{header}
+      div.apartment-feature__subheader #{subheader}

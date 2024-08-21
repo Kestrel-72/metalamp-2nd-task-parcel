@@ -1,0 +1,25 @@
+include apartment-feature
+
+- 
+   var defaultFeatures = [
+      {
+         icon: "insert_emoticon",
+         header: "Комфорт",
+         subheader: "Шумопоглащающие стены"
+      },
+      {
+         icon: "location_city",
+         header: "Удобство",
+         subheader: "Окно в каждой из спален"
+      },
+      {
+         icon: "whatshot",
+         header: "Уют",
+         subheader: "Номер оснащён камином"
+      },
+   ]
+
+mixin apartment-feature-container(features=defaultFeatures)
+   .apartment-feature-container 
+      each feature in features
+         +apartment-feature(feature.icon, feature.header, feature.subheader)

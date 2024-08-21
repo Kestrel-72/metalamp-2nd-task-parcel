@@ -13,6 +13,7 @@ include blocks/form-elements/buttons/large-button/large-button
 include blocks/pagination/pagination
 include blocks/form-elements/expandable-checkbox-list/expandable-checkbox-list
 include blocks/bullet-list/bullet-list
+include blocks/apartment-feature/apartment-feature-container
 
 - 
    var richCheckboxesList = [
@@ -40,6 +41,7 @@ html
       style
          include main.css
    body
+      +apartment-feature-container
       br
       //- +bullet-list
       //- +expandable-checkbox-list("expandable checkbox list", "expandCheckbox")
@@ -54,8 +56,8 @@ html
       //- +large-button("перейти к оплате", "go")
       //- +rate-buttons(3)
       //- br
-      +like-button(2, true)
-      +like-button(2, true)
+      //- +like-button(2, true)
+      //- +like-button(2, true)
       //- br
       //- +text-field("text", "Email", "email", "email")
       //- br

@@ -1,0 +1,23 @@
+@use "apartment-feature__header";
+@use "apartment-feature__subheader";
+@use "apartment-feature__icon";
+@use "apartment-feature-container";
+
+@use "../../style/colors.scss";
+
+.apartment-feature {
+   display: grid;
+   grid-template-columns: max-content 1fr;
+   grid-template-rows: 1fr 1fr;
+   column-gap: 10px;
+   align-items: center;
+}
+
+.apartment-feature:not(:first-of-type) {
+   padding-top: 19px;
+   border-top: 1px solid colors.$dark-shade-10;
+}
+
+.apartment-feature:not(:last-of-type) {
+   padding-bottom: 19px;
+}
