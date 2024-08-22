@@ -1,0 +1,13 @@
+@use "date-dropdown__label";
+@use "date-dropdown__input";
+
+@use "../../../style/sizes.scss" as *;
+@use "../../../style/borders.scss" as *;
+
+.date-dropdown {
+   display: grid;
+   grid-template-columns: 1fr 44px;
+   height: 44px;
+   @include small-width();
+   @include gray-border(4px);
+}

@@ -1,0 +1,9 @@
+include date-dropdown__label 
+include date-dropdown__input 
+include date-dropdown__button
+
+mixin date-dropdown(label, name, id)
+   .date-dropdown
+      +date-dropdown__label(id, label)
+      +date-dropdown__input(id, name)
+      +date-dropdown__button(id)
