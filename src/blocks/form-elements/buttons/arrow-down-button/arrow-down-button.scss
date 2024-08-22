@@ -1,6 +1,13 @@
+@use "../../../../style/colors.scss";
+
 .arrow-down-button {
    background-color: transparent;
    border: none;
    padding: 0;
    cursor: pointer;
+   color: colors.$dark-shade-50;
+}
+
+div:hover .arrow-down-button {
+   color: colors.$dark-shade-75;
 }
