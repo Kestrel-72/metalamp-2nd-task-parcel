@@ -1,3 +1,6 @@
-mixin arrow-forward-button(id, newClass)
+mixin arrow-forward-button(id, newClass, isPurple)
    button.arrow-forward-button(for=id, class=newClass)
-      include ../../../../svg/arrow_forward.svg
+      if isPurple 
+         include ../../../../svg/arrow_forward_purple.svg
+      else 
+         include ../../../../svg/arrow_forward.svg
