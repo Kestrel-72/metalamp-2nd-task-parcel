@@ -10,8 +10,9 @@ html
       style
          include main.css
    body
-      +review
+      //- +review
       //- +apartment-feature-container
+      +subscription-text-field("Email", "subscribe", "subscribe", "Email")
       br
       //- +bullet-list
       //- +expandable-checkbox-list("expandable checkbox list", "expandCheckbox")
@@ -29,11 +30,11 @@ html
       //- +like-button(2, true)
       //- +like-button(2, true)
       //- br
-      //- +text-field("text", "Email", "email", "email")
+      +text-field("text", "Email", "email", "email")
       //- br
       //- +dropdown
       //- br
-      +checkbox-buttons-container
+      //- +checkbox-buttons-container
       //- br
       //- +radio-buttons-container
       //- br

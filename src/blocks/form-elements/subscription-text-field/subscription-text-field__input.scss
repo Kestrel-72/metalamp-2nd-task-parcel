@@ -1,0 +1,21 @@
+@use "../../../style/colors.scss";
+@use "../../../style/fonts.scss" as *;
+@use "../../../style/borders.scss" as *;
+@use "../../../style/sizes.scss" as *;
+
+.subscription-text-field__input {
+   @include body-style();
+   padding-left: 15px;
+   border: none;
+   border-radius: 4px;
+   outline: none;
+}
+
+.subscription-text-field__input::placeholder {
+   color: colors.$dark-shade-25;
+   opacity: 1; /* Firefox */
+}
+ 
+.subscription-text-field__input::-ms-input-placeholder { /* Edge 12 -18 */
+   color: colors.$dark-shade-25;
+}
