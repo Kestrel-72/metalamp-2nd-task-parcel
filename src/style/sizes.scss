@@ -10,6 +10,16 @@
    width: 320px;
 }
 
+@mixin regular-height {
+   height: 44px;
+}
+
+@mixin input-with-arrow-grid-layout {
+   display: grid;
+   grid-template-columns: 1fr 44px;
+   grid-template-rows: 44px;
+}
+
 @mixin small-button-size {
    width: 99px;
    height: 44px;

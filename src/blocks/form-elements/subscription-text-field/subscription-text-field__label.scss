@@ -1,12 +1,5 @@
+@use "../../../style/hidden-label.scss" as *;
+
 .subscription-text-field__label {
-   // This is needed to visually hide label. 
-   // Still, it can be read by screen-readers.
-   border-width: 0 !important;
-   clip: rect(1px, 1px, 1px, 1px) !important;
-   height: 1px !important;
-   overflow: hidden !important;
-   padding: 0 !important;
-   position: absolute !important;
-   white-space: nowrap !important;
-   width: 1px !important;           
+   @include hidden-label();          
 }

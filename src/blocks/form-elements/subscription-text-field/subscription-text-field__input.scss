@@ -1,13 +1,14 @@
 @use "../../../style/colors.scss";
 @use "../../../style/fonts.scss" as *;
 @use "../../../style/borders.scss" as *;
+@use "../../../style/borders.scss";
 @use "../../../style/sizes.scss" as *;
 
 .subscription-text-field__input {
    @include body-style();
    padding-left: 15px;
    border: none;
-   border-radius: 4px;
+   border-radius: borders.$regular-radius;
    outline: none;
 }
 

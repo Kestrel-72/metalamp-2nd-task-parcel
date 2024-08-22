@@ -3,6 +3,5 @@
 .apartment-feature__header {
    grid-column: 2 / 3;
    grid-row: 1 / 2;
-   @include body-style();
-   font-weight: 700;
+   @include bold-body-style();
 }

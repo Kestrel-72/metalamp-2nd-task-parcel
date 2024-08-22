@@ -1,5 +1,9 @@
 @use 'colors';
 
+$regular-radius: 4px;
+$like-toggle-radius: 10px;
+$large-radius: 24px;
+
 @mixin gray-border($border-radius) {
    border: 1px solid colors.$dark-shade-25;
    border-radius: $border-radius;

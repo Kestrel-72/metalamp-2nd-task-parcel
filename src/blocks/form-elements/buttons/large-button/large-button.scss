@@ -2,16 +2,16 @@
 @use "large-button__arrow";
 
 @use "../../../../style/colors.scss";
+@use "../../../../style/borders.scss";
 @use "../../../../style/sizes.scss" as *;
 
 .large-button {
-   display: grid;
-   grid-template-columns: 1fr 44px;
+   @include input-with-arrow-grid-layout();
    grid-template-rows: 1fr 1fr 1fr;
    @include large-button-size();
    background: colors.$purple-blue-gradient();
    border: none;
-   border-radius: 24px;
+   border-radius: borders.$large-radius();
    outline: none;
    cursor: pointer;
 

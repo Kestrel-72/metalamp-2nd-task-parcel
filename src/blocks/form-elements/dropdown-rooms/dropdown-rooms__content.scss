@@ -1,8 +1,9 @@
 @use "../../../style/colors.scss";
 @use "../../../style/borders.scss" as *;
+@use "../../../style/borders.scss";
 
 .dropdown-rooms__content {
-   @include gray-border(0 0 4px 4px);
+   @include gray-border(0 0 borders.$regular-radius borders.$regular-radius);
    display: flex;
    flex-direction: column;
    gap: 20px;

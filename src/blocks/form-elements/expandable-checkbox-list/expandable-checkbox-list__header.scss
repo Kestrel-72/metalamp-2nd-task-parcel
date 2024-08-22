@@ -1,7 +1,7 @@
+@use "../../../style/sizes.scss" as *;
+
 .expandable-checkbox-list__header {
-   display: grid;
-   grid-template-columns: 1fr 44px;
-   grid-template-rows: 44px;
+   @include input-with-arrow-grid-layout();
    align-items: center;
    cursor: pointer;
 }

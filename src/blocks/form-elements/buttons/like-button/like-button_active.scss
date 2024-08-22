@@ -1,7 +1,8 @@
 @use "../../../../style/borders.scss" as *;
+@use "../../../../style/borders.scss";
 @use "../../../../style/fonts.scss" as *;
 
 .like-button_active {
-   @include purple-border(10px 10px 10px 10px);
+   @include purple-border(borders.$like-toggle-radius());
    @include active-like-button-style();
 }

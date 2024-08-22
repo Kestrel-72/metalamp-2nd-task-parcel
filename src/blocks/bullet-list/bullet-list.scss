@@ -2,6 +2,8 @@
 @use "bullet-list-item__marker";
 @use "bullet-list-item";
 
+@use "../../style/sizes.scss" as *;
+
 .bullet-list {
    display: flex;
    flex-direction: column;
@@ -9,5 +11,5 @@
    list-style: none;
    padding: 0;
    margin: 0;
-   width: 292px;
+   @include medium-width();
 }

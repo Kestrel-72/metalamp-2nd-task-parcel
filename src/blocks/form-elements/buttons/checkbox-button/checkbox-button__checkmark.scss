@@ -1,4 +1,5 @@
 @use "../../../../style/borders.scss" as *;
+@use "../../../../style/borders.scss";
 @use "../../../../style/colors.scss";
 
 .checkbox-button__checkmark {
@@ -8,7 +9,7 @@
    height: 20px;
    width: 20px;
    background-color: white;
-   @include gray-border(4px 4px 4px 4px);
+   @include gray-border(borders.$regular-radius);
 }
 
 .checkbox-button__checkmark:after {
@@ -18,7 +19,7 @@
 }
 
 .checkbox-button__input:checked ~ .checkbox-button__checkmark {
-   @include purple-border(4px 4px 4px 4px);
+   @include purple-border(borders.$regular-radius);
 }
 
 .checkbox-button__label:hover .checkbox-button__input:not(:checked) ~ .checkbox-button__checkmark {

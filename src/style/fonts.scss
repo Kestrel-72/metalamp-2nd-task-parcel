@@ -80,10 +80,9 @@
 }
 
 @mixin pagination-number-current-style {
-   font-family: 'montserratregular';
+   font-family: 'montserratbold';
    font-size: 12px;
    color: white;
-   font-weight: 700;
 }
 
 @mixin rich-checkbox-title-first-line-style {

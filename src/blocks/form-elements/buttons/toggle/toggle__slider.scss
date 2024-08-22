@@ -1,4 +1,5 @@
 @use "../../../../style/borders.scss" as *;
+@use "../../../../style/borders.scss";
 @use "../../../../style/colors.scss";
 
 .toggle__slider {
@@ -9,7 +10,7 @@
    right: 0;
    bottom: 0;
    background-color: white;
-   @include gray-border(10px 10px 10px 10px);
+   @include gray-border(borders.$like-toggle-radius());
 }
 
 .toggle__slider:before {
