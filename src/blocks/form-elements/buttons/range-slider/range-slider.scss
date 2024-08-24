@@ -1,4 +1,3 @@
-@use "range-slider__container";
 @use "range-slider__label";
 @use "range-slider__top";
 @use "range-slider__values";
@@ -9,6 +8,6 @@
 .range-slider {
    display: flex;
    flex-direction: column;
-   gap: 18px;
+   gap: 15px;
    @include medium-width();
 }
