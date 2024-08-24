@@ -3,6 +3,7 @@
 
 $line-height: 6px;
 $handle-size: 12px;
+$padding-top-bottom: 3px;
 
 /**
 Ion.RangeSlider, 2.3.1
@@ -22,6 +23,7 @@ Build date: 2019-12-19 16:51:02
   font-size: 12px;
   font-family: Arial, sans-serif;
   @include medium-width();
+  padding: $padding-top-bottom 0;
 }
 
 .irs-line {
@@ -35,7 +37,7 @@ Build date: 2019-12-19 16:51:02
 .irs-bar {
   position: absolute;
   display: block;
-  top: 0;
+  top: $padding-top-bottom + 3;
   left: 0;
   width: 0;
   cursor: pointer;
@@ -43,7 +45,7 @@ Build date: 2019-12-19 16:51:02
 
 .irs-handle {
   position: absolute;
-  top: -3px;
+  top: $padding-top-bottom;
   display: block;
   box-sizing: border-box;
   z-index: 1;

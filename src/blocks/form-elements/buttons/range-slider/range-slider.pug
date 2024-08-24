@@ -1,5 +1,12 @@
 <!--jQuery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-mixin range-slider
-   <input type="text" class="js-range-slider" name="my_range" value="" />
+mixin range-slider(label)
+   .range-slider
+      .range-slider__top
+         .range-slider__label #{label}
+         .range-slider__values
+            span.range-slider__values-from 5000₽ 
+            | - 
+            span.range-slider__values-to 10000₽
+      <input type="text" class="js-range-slider" name="my_range" value="" />

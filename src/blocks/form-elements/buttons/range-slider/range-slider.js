@@ -2462,6 +2462,15 @@ export function rangeSlider() {
       skin: "round",
       hide_min_max: true,
       hide_from_to: true,
-      postfix: "₽",
+      onChange: function (data) {
+         let postfix = "₽";
+
+         let fromSpan = document.querySelector(".range-slider__values-from");
+         fromSpan.textContent = data.from + postfix + " ";
+
+         let toSpan = document.querySelector(".range-slider__values-to");
+         toSpan.textContent = data.to + postfix;
+     },
+
   });
 }

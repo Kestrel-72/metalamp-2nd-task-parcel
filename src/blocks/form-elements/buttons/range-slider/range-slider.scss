@@ -1,13 +1,14 @@
 @use "range-slider__container";
 @use "range-slider__label";
 @use "range-slider__top";
-@use "range-slider__track";
 @use "range-slider__values";
 @use "ion.rangeSlider.scss";
 
 @use "../../../../style/sizes.scss" as *;
 
 .range-slider {
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
    @include medium-width();
-   padding-bottom: 33px;
 }
