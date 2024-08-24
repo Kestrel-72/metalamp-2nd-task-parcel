@@ -2,6 +2,6 @@ import { rangeSlider } from "./blocks/form-elements/buttons/range-slider/range-s
 import { expandableCheckboxList } from "./blocks/form-elements/expandable-checkbox-list/expandable-checkbox-list";
 import { likeButton } from "./blocks/form-elements/buttons/like-button/like-button";
 
-// rangeSlider();
+rangeSlider();
 // expandableCheckboxList();
-likeButton();
+// likeButton();
