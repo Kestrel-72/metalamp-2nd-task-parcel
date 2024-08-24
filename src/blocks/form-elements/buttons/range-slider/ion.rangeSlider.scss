@@ -29,21 +29,25 @@ Build date: 2019-12-19 16:51:02
   display: block;
   overflow: hidden;
   outline: none !important;
+  cursor: pointer;
 }
 
 .irs-bar {
   position: absolute;
   display: block;
+  top: 0;
   left: 0;
   width: 0;
+  cursor: pointer;
 }
 
 .irs-handle {
   position: absolute;
+  top: -3px;
   display: block;
   box-sizing: border-box;
-  cursor: default;
   z-index: 1;
+  cursor: pointer;
 }
 
 .irs-handle.type_last {
@@ -69,12 +73,7 @@ Build date: 2019-12-19 16:51:02
   border-color: transparent !important;
 }
 
-.irs--round {
-  height: 50px;
-}
-
 .irs--round .irs-line {
-  top: 36px;
   height: $line-height;
   background-color: white;
   border: 1px solid colors.$dark-shade-25;
@@ -82,7 +81,6 @@ Build date: 2019-12-19 16:51:02
 }
 
 .irs--round .irs-bar {
-  top: 36px;
   height: $line-height;
   background: colors.$green-blue-gradient();
 }
@@ -92,7 +90,6 @@ Build date: 2019-12-19 16:51:02
 }
 
 .irs--round .irs-handle {
-  top: 33px;
   width: $handle-size;
   height: $handle-size;
   background: colors.$green-blue-gradient();
