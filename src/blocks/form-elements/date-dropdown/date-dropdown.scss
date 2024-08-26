@@ -10,4 +10,5 @@
    @include regular-height();
    @include small-width();
    @include gray-border(borders.$regular-radius);
+   align-items: center;
 }
