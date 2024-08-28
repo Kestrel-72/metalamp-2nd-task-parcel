@@ -4,7 +4,6 @@
 @use "../../../style/sizes.scss" as *;
 
 .date-dropdown__input {
-   @include small-width();
    @include body-style();
    padding-left: 15px;
    border: none;

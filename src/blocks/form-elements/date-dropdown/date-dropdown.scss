@@ -11,4 +11,5 @@
    @include small-width();
    @include gray-border(borders.$regular-radius);
    align-items: center;
+   cursor: pointer;
 }
