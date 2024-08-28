@@ -1,3 +1,4 @@
-mixin arrow-back-button(id, newClass)
-   button.arrow-back-button(for=id, class=newClass)
-      include ../../../../svg/arrow_back.svg
+mixin arrow-back-button(id, newClass, color)
+   button.arrow-back-button(id=id, class=newClass)
+      if color == "purple"
+         include ../../../../svg/arrow_back_purple.svg

@@ -1,3 +1,8 @@
+include calendar__prev-month
+include calendar__next-month
+
 mixin calendar__header 
-   .calendar__header 
+   .calendar__header
+      +calendar__prev-month
       .calendar__currentMonth 
+      +calendar__next-month
