@@ -1,0 +1,5 @@
+@use "../../../style/sizes.scss" as *;
+
+.date-dropdown.date-dropdown_filter {
+   @include medium-width();
+}
