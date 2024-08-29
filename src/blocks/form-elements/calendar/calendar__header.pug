@@ -1,8 +1,9 @@
 include calendar__prev-month
 include calendar__next-month
+include calendar__header-month-and-year
 
-mixin calendar__header 
+mixin calendar__header(date)
    .calendar__header
       +calendar__prev-month
-      .calendar__currentMonth 
+      +calendar__header-month-and-year(date)
       +calendar__next-month

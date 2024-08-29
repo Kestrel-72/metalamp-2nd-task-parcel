@@ -1,0 +1,6 @@
+mixin calendar__header-month-and-year(date)
+   - var monthIndex = date.getMonth();
+   - var months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+   - var month = months[monthIndex];
+   - var year = date.getFullYear();
+   .calendar__header-month-and-year #{month} #{year}
