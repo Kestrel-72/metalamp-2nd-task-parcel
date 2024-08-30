@@ -4,10 +4,11 @@ const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date
 
 export function calendar() {
    let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-   let newMonth = addMonths(new Date(2024, 7, 1), -1);
-   createGrid(newMonth);
+   let newMonth = addMonths(new Date(2024, 7, 1), 0);
+   const calendarDays = getCalendarDays(newMonth);
+   createCalendarGrid(calendarDays);
 
-   function createGrid(date=new Date()) {
+   function getCalendarDays(date=new Date()) {
       console.log(date)
       const prevMonth = addMonths(date, -1);
       const nextMonth = addMonths(date, 1);
@@ -19,12 +20,23 @@ export function calendar() {
       const numberOfDaysBeforeCurrent = getDaysBeforeCurrentMonth(allDaysOfCurrentMonth[0]);
       const numberOfDaysAfterCurrent = getDaysAfterCurrentMonth(numberOfDaysBeforeCurrent + allDaysOfCurrentMonth.length);
 
+      const prevDays = allDaysOfPrevMonth.splice(allDaysOfPrevMonth.length - numberOfDaysBeforeCurrent);
+      console.log('Grid days before: ' + prevDays);
+      const nextDays = allDaysOfNextMonth.splice(0, numberOfDaysAfterCurrent);
+      console.log('Grid days after: ' + nextDays);
+
+      const calendarDays = prevDays.concat(allDaysOfCurrentMonth, nextDays);
+      console.log(calendarDays);
+
+      return calendarDays;
+   }
+
+   function createCalendarGrid(calendarDays) {
       let grid = document.createElement('div.calendar__grid');
       for (let i = 0; i < 6; i++) {
          grid.append(createGridRow(i));
       }
       console.log(grid);
-
    }
 
    function getDaysBeforeCurrentMonth(firstDayOfMonth) {
@@ -47,16 +59,6 @@ export function calendar() {
    function getDaysAfterCurrentMonth(numberOfDaysMonthBeforeAndCurrentMonth) {
       const result = 42 - numberOfDaysMonthBeforeAndCurrentMonth;
       console.log('Days after: '+ result)
-      return result;
-   }
-
-   function getNumberOfCells(daysBeforeCurrentMonth, daysOfCurrentMonth, daysAfterCurrentMonth) {
-      let result = daysBeforeCurrentMonth + daysOfCurrentMonth + daysAfterCurrentMonth;
-      console.log('Перед добавлением: ' + result)
-      if (result < 42) {
-         result = result + 7;
-      }
-      console.log('После добавления: ' + result)
       return result;
    }
 
