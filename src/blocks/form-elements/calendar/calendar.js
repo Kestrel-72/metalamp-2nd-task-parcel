@@ -1,10 +1,14 @@
 import { da } from "date-fns/locale";
+import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
+import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
 const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date-fns");
 
 export function calendar() {
+   const body = document.querySelector('body');
    let newMonth = addMonths(new Date(2024, 7, 1), 0);
    const calendarData = getCalendarData(newMonth);
+
    createCalendarGrid(calendarData);
 
    function getCalendarData(date=new Date()) {
@@ -32,6 +36,33 @@ export function calendar() {
       }
 
       return calendarData;
+   }
+
+   function createCalendarHeader(date=new Date()) {
+      const header = document.createElement('div.calendar__header');
+
+      const prevMonthButton = document.createElement('button');
+      prevMonthButton.id = 'calendarPrevMonth';
+      prevMonthButton.classList.add('calendar__header-button');
+      prevMonthButton.innerHTML = arrow_back;
+
+      const nextMonthButton = document.createElement('button');
+      nextMonthButton.id = 'calendarNextMonth';
+      nextMonthButton.classList.add('calendar__header-button');
+      nextMonthButton.innerHTML = arrow_forward;
+
+      const monthIndex = date.getMonth();
+      const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
+      const month = months[monthIndex];
+      const year = date.getFullYear();
+
+      const headerMonthAndYear = document.createElement('div');
+      headerMonthAndYear.classList.add('calendar__month-and-year');
+      headerMonthAndYear.textContent = month + " " + year;
+
+      header.append(prevMonthButton, headerMonthAndYear, nextMonthButton);
+
+      return header;
    }
 
    function createCalendarWeekDays() {
