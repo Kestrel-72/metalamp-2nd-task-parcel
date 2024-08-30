@@ -4,20 +4,23 @@ const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date
 
 export function calendar() {
    let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-   let newMonth = addMonths(new Date(2024, 7, 1), 2);
+   let newMonth = addMonths(new Date(2024, 7, 1), -1);
    createGrid(newMonth);
 
    function createGrid(date=new Date()) {
       console.log(date)
-      let grid = document.createElement('div.calendar__grid');
+      const prevMonth = addMonths(date, -1);
+      const nextMonth = addMonths(date, 1);
 
-      let daysOfCurrentMonth = getDaysOfCurrentMonth(date);
-      let daysBeforeCurrentMonth = getDaysBeforeCurrentMonth(daysOfCurrentMonth[0]);
-      let daysAfterCurrentMonth = getDaysAfterCurrentMonth(daysBeforeCurrentMonth + daysOfCurrentMonth.length)
-      let numberOfCells = getNumberOfCells(daysBeforeCurrentMonth, daysOfCurrentMonth.length, daysAfterCurrentMonth);
-      let numberOfRows = Math.floor(numberOfCells / 7);
-      console.log('Number of rows:' + numberOfRows);
-      for (let i = 0; i < numberOfRows; i++) {
+      const allDaysOfPrevMonth = getDaysOfMonth(prevMonth);
+      const allDaysOfNextMonth = getDaysOfMonth(nextMonth);
+      const allDaysOfCurrentMonth = getDaysOfMonth(date);
+      
+      const numberOfDaysBeforeCurrent = getDaysBeforeCurrentMonth(allDaysOfCurrentMonth[0]);
+      const numberOfDaysAfterCurrent = getDaysAfterCurrentMonth(numberOfDaysBeforeCurrent + allDaysOfCurrentMonth.length);
+
+      let grid = document.createElement('div.calendar__grid');
+      for (let i = 0; i < 6; i++) {
          grid.append(createGridRow(i));
       }
       console.log(grid);
@@ -26,11 +29,12 @@ export function calendar() {
 
    function getDaysBeforeCurrentMonth(firstDayOfMonth) {
       let result = (firstDayOfMonth.getDay() || 7) - 1;
-      console.log('Days before current month: ' + result)
+      if (result == 0) result = 7;
+      console.log('Days before: ' + result)
       return result;
    }
 
-   function getDaysOfCurrentMonth(date=new Date()) {
+   function getDaysOfMonth(date=new Date()) {
       const start = startOfMonth(date);
       const end = endOfMonth(date);
       const monthDays = eachDayOfInterval({
@@ -41,7 +45,9 @@ export function calendar() {
    }
 
    function getDaysAfterCurrentMonth(numberOfDaysMonthBeforeAndCurrentMonth) {
-      return 7 - (numberOfDaysMonthBeforeAndCurrentMonth % 7);
+      const result = 42 - numberOfDaysMonthBeforeAndCurrentMonth;
+      console.log('Days after: '+ result)
+      return result;
    }
 
    function getNumberOfCells(daysBeforeCurrentMonth, daysOfCurrentMonth, daysAfterCurrentMonth) {
