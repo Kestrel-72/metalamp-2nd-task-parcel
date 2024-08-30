@@ -5,10 +5,10 @@ const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date
 export function calendar() {
    let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
    let newMonth = addMonths(new Date(2024, 7, 1), 0);
-   const calendarDays = getCalendarDays(newMonth);
-   createCalendarGrid(calendarDays);
+   const calendarData = getCalendarData(newMonth);
+   createCalendarGrid(calendarData);
 
-   function getCalendarDays(date=new Date()) {
+   function getCalendarData(date=new Date()) {
       console.log(date)
       const prevMonth = addMonths(date, -1);
       const nextMonth = addMonths(date, 1);
@@ -26,16 +26,23 @@ export function calendar() {
       console.log('Grid days after: ' + nextDays);
 
       const calendarDays = prevDays.concat(allDaysOfCurrentMonth, nextDays);
-      console.log(calendarDays);
 
-      return calendarDays;
+      const calendarData = {
+         currentMonth: date.getMonth(),
+         days: calendarDays
+      }
+
+      return calendarData;
    }
 
-   function createCalendarGrid(calendarDays) {
+   function createCalendarGrid(calendarData) {
       let grid = document.createElement('div.calendar__grid');
+      
       for (let i = 0; i < 6; i++) {
-         grid.append(createGridRow(i));
+         let currentWeek = calendarData.days.splice(0, 7);
+         grid.append(createGridRow(i, currentWeek, calendarData.currentMonth))
       }
+
       console.log(grid);
    }
 
@@ -62,17 +69,23 @@ export function calendar() {
       return result;
    }
 
-   function createGridRow(rowIndex) {
+   function createGridRow(rowIndex, currentRow, currentMonth) {
       let gridRow = document.createElement('div.calendar__grid-row');
       for (let i = 0; i < 7; i++) {
-         gridRow.append(createGridCell(7 * rowIndex + i));
+         gridRow.append(createGridCell(7 * rowIndex + i, currentRow[i], currentMonth));
       }
       return gridRow;
    }
 
-   function createGridCell(cellIndex) {
+   function createGridCell(cellIndex, day, currentMonth) {
       let gridDiv = document.createElement('div.calendar__grid-cell');
       gridDiv.dataset.cell = cellIndex;
+      if (day.getMonth() == currentMonth) {
+         gridDiv.classList.add('calendar__grid-cell_current-month');
+      } else {
+         gridDiv.classList.add('calendar__grid-cell_not-current-month');
+      }
+      gridDiv.textContent = day.getDate();
       return gridDiv;
    }
 
