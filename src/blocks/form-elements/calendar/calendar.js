@@ -42,8 +42,8 @@ export function calendar() {
          let currentWeek = calendarData.days.splice(0, 7);
          grid.append(createGridRow(i, currentWeek, calendarData.currentMonth))
       }
-
       console.log(grid);
+      return grid;
    }
 
    function getDaysBeforeCurrentMonth(firstDayOfMonth) {
