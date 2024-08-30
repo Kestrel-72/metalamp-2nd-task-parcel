@@ -3,7 +3,6 @@ import { da } from "date-fns/locale";
 const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date-fns");
 
 export function calendar() {
-   let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
    let newMonth = addMonths(new Date(2024, 7, 1), 0);
    const calendarData = getCalendarData(newMonth);
    createCalendarGrid(calendarData);
@@ -33,6 +32,17 @@ export function calendar() {
       }
 
       return calendarData;
+   }
+
+   function createCalendarWeekDays() {
+      let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+      const calendarWeekDays = document.createElement('div.calendar__week-days');
+      for (let i = 0; i < 7; i++) {
+         const day = document.createElement('div.calendar__week-day');
+         day.textContent = daysOfWeek[i];
+         calendarWeekDays.append(day);
+      }
+      return calendarWeekDays;
    }
 
    function createCalendarGrid(calendarData) {
