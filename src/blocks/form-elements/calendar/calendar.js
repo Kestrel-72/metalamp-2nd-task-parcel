@@ -69,7 +69,8 @@ export function calendar() {
       let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
       const calendarWeekDays = document.createElement('div.calendar__week-days');
       for (let i = 0; i < 7; i++) {
-         const day = document.createElement('div.calendar__week-day');
+         const day = document.createElement('div');
+         day.classList.add('calendar__week-day');
          day.textContent = daysOfWeek[i];
          calendarWeekDays.append(day);
       }
@@ -77,7 +78,8 @@ export function calendar() {
    }
 
    function createCalendarGrid(calendarData) {
-      let grid = document.createElement('div.calendar__grid');
+      let grid = document.createElement('div');
+      grid.classList.add('.calendar__grid');
       
       for (let i = 0; i < 6; i++) {
          let currentWeek = calendarData.days.splice(0, 7);
@@ -111,7 +113,8 @@ export function calendar() {
    }
 
    function createGridRow(rowIndex, currentRow, currentMonth) {
-      let gridRow = document.createElement('div.calendar__grid-row');
+      let gridRow = document.createElement('div');
+      gridRow.classList.add('calendar__grid-row');
       for (let i = 0; i < 7; i++) {
          gridRow.append(createGridCell(7 * rowIndex + i, currentRow[i], currentMonth));
       }
@@ -119,7 +122,8 @@ export function calendar() {
    }
 
    function createGridCell(cellIndex, day, currentMonth) {
-      let gridDiv = document.createElement('div.calendar__grid-cell');
+      let gridDiv = document.createElement('div');
+      gridDiv.classList.add('calendar__grid-cell');
       gridDiv.dataset.cell = cellIndex;
       if (day.getMonth() == currentMonth) {
          gridDiv.classList.add('calendar__grid-cell_current-month');
