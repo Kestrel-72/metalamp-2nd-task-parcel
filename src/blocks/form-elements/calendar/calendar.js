@@ -125,6 +125,11 @@ export function calendar() {
       const clearButton = document.createElement('button');
       clearButton.classList.add('calendar__clear', 'borderless-button');
       clearButton.textContent = 'Очистить';
+      clearButton.addEventListener('click', () => {
+         rangeStart = null;
+         rangeEnd = null;
+         rerenderCalendar(new Date(), rangeStart, rangeEnd)
+      })
 
       const applyButton = document.createElement('button');
       applyButton.classList.add('calendar__apply', 'borderless-button');
