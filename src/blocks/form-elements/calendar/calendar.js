@@ -5,7 +5,6 @@ const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date
 
 export function calendar() {
    const body = document.querySelector('body');
-   let newMonth = addMonths(new Date(2024, 7, 1), 0);
 
    body.append(createCalendar())
 
@@ -13,7 +12,7 @@ export function calendar() {
       const calendar = document.createElement('div');
       calendar.classList.add('calendar');
 
-      const calendarData = getCalendarData(newMonth);
+      const calendarData = getCalendarData(date);
 
       const header = createCalendarHeader(date);
       const weekDays = createCalendarWeekDays();
@@ -60,11 +59,19 @@ export function calendar() {
       prevMonthButton.id = 'calendarPrevMonth';
       prevMonthButton.classList.add('calendar__header-button', 'arrow-back-button');
       prevMonthButton.innerHTML = arrow_back;
+      prevMonthButton.addEventListener('click', () => {
+         const newMonth = addMonths(date, -1);
+         rerenderCalendar(newMonth);
+      })
 
       const nextMonthButton = document.createElement('button');
       nextMonthButton.id = 'calendarNextMonth';
       nextMonthButton.classList.add('calendar__header-button', 'arrow-forward-button');
       nextMonthButton.innerHTML = arrow_forward;
+      nextMonthButton.addEventListener('click', () => {
+         const newMonth = addMonths(date, 1);
+         rerenderCalendar(newMonth);
+      })
 
       const monthIndex = date.getMonth();
       const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
@@ -167,4 +174,8 @@ export function calendar() {
       return gridDiv;
    }
 
+   function rerenderCalendar(date) {
+      document.querySelector('.calendar').remove();
+      body.append(createCalendar(date));
+   }
 }
