@@ -9,6 +9,7 @@ export function calendar() {
    let newMonth = addMonths(new Date(2024, 7, 1), 0);
    const calendarData = getCalendarData(newMonth);
 
+   body.append(createCalendarHeader())
    createCalendarGrid(calendarData);
 
    function getCalendarData(date=new Date()) {
@@ -39,7 +40,8 @@ export function calendar() {
    }
 
    function createCalendarHeader(date=new Date()) {
-      const header = document.createElement('div.calendar__header');
+      const header = document.createElement('div');
+      header.classList.add('calendar__header');
 
       const prevMonthButton = document.createElement('button');
       prevMonthButton.id = 'calendarPrevMonth';
