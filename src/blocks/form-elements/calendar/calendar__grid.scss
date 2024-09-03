@@ -20,6 +20,7 @@
 }
 
 .calendar__grid-cell {
+   position: relative;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -43,6 +44,34 @@
    background: colors.$purple-blue-gradient();
 }
 
-.calendar__grid-cell_range-track::before {
+.calendar__grid-cell_range-track::after {
    content: '';
+   width: 40px;
+   position: absolute;
+   height: 100%;
+   z-index: -1;
+   background: colors.$purple-blue-gradient;
+   opacity: 0.25;
+}
+
+.calendar__grid-cell_range-track-start::after {
+   content: '';
+   position: absolute;
+   width: 20px;
+   left: 20px;
+   height: 100%;
+   z-index: -1;
+   background: colors.$purple-blue-gradient;
+   opacity: 0.25;
+}
+
+.calendar__grid-cell_range-track-end::after {
+   content: '';
+   position: absolute;
+   width: 20px;
+   right: 20px;
+   height: 100%;
+   z-index: -1;
+   background: colors.$purple-blue-gradient;
+   opacity: 0.25;
 }

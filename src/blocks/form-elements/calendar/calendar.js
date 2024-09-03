@@ -183,7 +183,11 @@ export function calendar() {
          gridCell.classList.add('calendar__grid-cell_picked');
       }
       if (rangeStart && rangeEnd) {
-         if (isWithinRangeTrack(day, rangeStart, rangeEnd)) {
+         if (isEqual(day, rangeStart)) {
+            gridCell.classList.add('calendar__grid-cell_range-track-start');
+         } else if (isEqual(day, rangeEnd)) {
+            gridCell.classList.add('calendar__grid-cell_range-track-end');
+         } else if (isWithinRangeTrack(day, rangeStart, rangeEnd)) {
             gridCell.classList.add('calendar__grid-cell_range-track');
          }
       }
