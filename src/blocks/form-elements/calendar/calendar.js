@@ -1,16 +1,20 @@
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
-const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths, isToday } = require("date-fns");
+const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual } = require("date-fns");
 
 export function calendar() {
    const body = document.querySelector('body');
-   let rangeStart;
-   let rangeEnd;
-
+   let rangeStart = null;
+   let rangeEnd= null;
+   let currentMonth = new Date();
+   
    body.append(createCalendar())
 
-   function createCalendar(date = new Date(), rangeStart, rangeEnd) {
+   function createCalendar(date = currentMonth, rangeStart = null, rangeEnd= null) {
+      console.log('Rerender Range start: ' + rangeStart)
+      console.log('Rerender Range end: ' + rangeEnd)
+
       const calendar = document.createElement('div');
       calendar.classList.add('calendar');
 
@@ -18,7 +22,7 @@ export function calendar() {
 
       const header = createCalendarHeader(date);
       const weekDays = createCalendarWeekDays();
-      const grid = createCalendarGrid(calendarData);
+      const grid = createCalendarGrid(calendarData, rangeStart, rangeEnd);
       const footer = createCalendarFooter();
 
       calendar.append(header, weekDays, grid, footer);
@@ -62,8 +66,8 @@ export function calendar() {
       prevMonthButton.classList.add('calendar__header-button', 'arrow-back-button');
       prevMonthButton.innerHTML = arrow_back;
       prevMonthButton.addEventListener('click', () => {
-         const newMonth = addMonths(date, -1);
-         rerenderCalendar(newMonth);
+         currentMonth = addMonths(date, -1);
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd);
       })
 
       const nextMonthButton = document.createElement('button');
@@ -71,8 +75,8 @@ export function calendar() {
       nextMonthButton.classList.add('calendar__header-button', 'arrow-forward-button');
       nextMonthButton.innerHTML = arrow_forward;
       nextMonthButton.addEventListener('click', () => {
-         const newMonth = addMonths(date, 1);
-         rerenderCalendar(newMonth);
+         currentMonth = addMonths(date, 1);
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd);
       })
 
       const monthIndex = date.getMonth();
@@ -102,13 +106,13 @@ export function calendar() {
       return calendarWeekDays;
    }
 
-   function createCalendarGrid(calendarData) {
+   function createCalendarGrid(calendarData, rangeStart, rangeEnd) {
       const grid = document.createElement('div');
       grid.classList.add('calendar__grid');
       
       for (let i = 0; i < 6; i++) {
          const currentWeek = calendarData.days.splice(0, 7);
-         grid.append(createGridRow(i, currentWeek, calendarData.currentMonth))
+         grid.append(createGridRow(i, currentWeek, calendarData.currentMonth, rangeStart, rangeEnd))
       }
       // console.log(grid);
       return grid;
@@ -154,16 +158,16 @@ export function calendar() {
       return result;
    }
 
-   function createGridRow(rowIndex, currentRow, currentMonth) {
+   function createGridRow(rowIndex, currentRow, currentMonth, rangeStart, rangeEnd) {
       let gridRow = document.createElement('div');
       gridRow.classList.add('calendar__grid-row');
       for (let i = 0; i < 7; i++) {
-         gridRow.append(createGridCell(7 * rowIndex + i, currentRow[i], currentMonth));
+         gridRow.append(createGridCell(7 * rowIndex + i, currentRow[i], currentMonth, rangeStart, rangeEnd));
       }
       return gridRow;
    }
 
-   function createGridCell(cellIndex, day, currentMonth) {
+   function createGridCell(cellIndex, day, currentMonth, rangeStart, rangeEnd) {
       const gridCell = document.createElement('div');
       gridCell.classList.add('calendar__grid-cell');
       gridCell.dataset.cell = cellIndex;
@@ -175,6 +179,10 @@ export function calendar() {
       if (isToday(day)) {
          gridCell.classList.add('calendar__grid-cell_today');
       }
+      if (isEqual(day, rangeStart) || isEqual(day, rangeEnd)) {
+         gridCell.classList.add('calendar__grid-cell_picked');
+      }
+
       gridCell.textContent = day.getDate();
 
       gridCell.addEventListener('click', () => {
@@ -184,16 +192,18 @@ export function calendar() {
       return gridCell;
    }
 
-   function rerenderCalendar(date) {
+   function rerenderCalendar(date, rangeStart, rangeEnd) {
       document.querySelector('.calendar').remove();
-      body.append(createCalendar(date));
+      body.append(createCalendar(date, rangeStart, rangeEnd));
    }
 
    function handleClickOnGridCell(gridCell, day) {
       if (!rangeStart && !rangeEnd) {
          setRangeStart(gridCell, day)
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd)
       } else if (rangeStart && !rangeEnd) {
          setRangeEnd(gridCell, day)
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd)
       }
    }
 
