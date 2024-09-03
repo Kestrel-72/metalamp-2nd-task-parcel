@@ -1,0 +1,9 @@
+@use '../../../style/fonts.scss' as *;
+
+.calendar__header {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   @include h2-style();
+   grid-row: 1 / 2;
+}

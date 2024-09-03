@@ -1,0 +1,17 @@
+@use 'calendar__header';
+@use 'calendar__week-days';
+@use 'calendar__grid';
+@use 'calendar__footer';
+
+@use '../../../style/sizes.scss' as *;
+@use '../../../style/borders.scss' as *;
+@use '../../../style/shadow.scss' as *;
+
+.calendar {
+   display: grid;
+   grid-template-rows: max-content 30px max-content max-content 20px max-content;
+   @include large-width();
+   padding: 20px;
+   @include gray-border(4px);
+   @include shadow();
+}

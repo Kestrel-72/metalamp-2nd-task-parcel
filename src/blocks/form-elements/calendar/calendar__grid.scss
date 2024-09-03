@@ -1,0 +1,24 @@
+@use '../../../style/fonts.scss' as *;
+
+
+.calendar__grid {
+   @include calendar-grid-style();
+   grid-row: 4 / 5;
+}
+
+.calendar__grid-row {
+   display: grid;
+   grid-template-columns: repeat(7, 40px);
+   grid-template-rows: 40px;
+   align-items: center;
+   justify-items: center;
+}
+
+.calendar__grid-cell_not-current-month {
+   opacity: 0.25;
+}
+
+.calendar__grid-cell {
+   padding: 4px;
+   cursor: pointer;
+}

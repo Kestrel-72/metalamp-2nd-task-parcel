@@ -1,0 +1,12 @@
+@use '../../../style/fonts.scss' as *;
+
+.calendar__week-days {
+   display: grid;
+   grid-template-columns: repeat(7, 40px);
+   grid-template-rows: 40px;
+   align-items: center;
+   justify-items: center;
+   grid-row: 3 / 4;
+
+   @include calendar-week-days-style(); 
+}

@@ -58,12 +58,12 @@ export function calendar() {
 
       const prevMonthButton = document.createElement('button');
       prevMonthButton.id = 'calendarPrevMonth';
-      prevMonthButton.classList.add('calendar__header-button');
+      prevMonthButton.classList.add('calendar__header-button', 'arrow-back-button');
       prevMonthButton.innerHTML = arrow_back;
 
       const nextMonthButton = document.createElement('button');
       nextMonthButton.id = 'calendarNextMonth';
-      nextMonthButton.classList.add('calendar__header-button');
+      nextMonthButton.classList.add('calendar__header-button', 'arrow-forward-button');
       nextMonthButton.innerHTML = arrow_forward;
 
       const monthIndex = date.getMonth();
