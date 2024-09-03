@@ -1,7 +1,7 @@
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
-const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date-fns");
+const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths, isToday } = require("date-fns");
 
 export function calendar() {
    const body = document.querySelector('body');
@@ -101,11 +101,11 @@ export function calendar() {
    }
 
    function createCalendarGrid(calendarData) {
-      let grid = document.createElement('div');
+      const grid = document.createElement('div');
       grid.classList.add('calendar__grid');
       
       for (let i = 0; i < 6; i++) {
-         let currentWeek = calendarData.days.splice(0, 7);
+         const currentWeek = calendarData.days.splice(0, 7);
          grid.append(createGridRow(i, currentWeek, calendarData.currentMonth))
       }
       // console.log(grid);
@@ -162,13 +162,16 @@ export function calendar() {
    }
 
    function createGridCell(cellIndex, day, currentMonth) {
-      let gridDiv = document.createElement('div');
+      const gridDiv = document.createElement('div');
       gridDiv.classList.add('calendar__grid-cell');
       gridDiv.dataset.cell = cellIndex;
       if (day.getMonth() == currentMonth) {
          gridDiv.classList.add('calendar__grid-cell_current-month');
       } else {
          gridDiv.classList.add('calendar__grid-cell_not-current-month');
+      }
+      if (isToday(day)) {
+         gridDiv.classList.add('calendar__grid-cell_today');
       }
       gridDiv.textContent = day.getDate();
       return gridDiv;
