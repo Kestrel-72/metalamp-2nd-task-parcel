@@ -42,3 +42,7 @@
    @include pagination-number-current-style();
    background: colors.$purple-blue-gradient();
 }
+
+.calendar__grid-cell_range-track::before {
+   content: '';
+}

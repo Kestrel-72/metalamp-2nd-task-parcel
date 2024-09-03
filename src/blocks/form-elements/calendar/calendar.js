@@ -1,7 +1,7 @@
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
-const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual } = require("date-fns");
+const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual } = require("date-fns");
 
 export function calendar() {
    const body = document.querySelector('body');
@@ -182,7 +182,12 @@ export function calendar() {
       if (isEqual(day, rangeStart) || isEqual(day, rangeEnd)) {
          gridCell.classList.add('calendar__grid-cell_picked');
       }
-
+      if (rangeStart && rangeEnd) {
+         if (isWithinRangeTrack(day, rangeStart, rangeEnd)) {
+            gridCell.classList.add('calendar__grid-cell_range-track');
+         }
+      }
+      
       gridCell.textContent = day.getDate();
 
       gridCell.addEventListener('click', () => {
@@ -217,5 +222,12 @@ export function calendar() {
       rangeEnd = day;
       gridCell.classList.add('calendar__grid-cell_picked');
       console.log('Range end: ' + day);
+   }
+
+   function isWithinRangeTrack(day, rangeStart, rangeEnd) {
+      return isWithinInterval(day, {
+         start: rangeStart,
+         end: rangeEnd
+      })
    }
 }
