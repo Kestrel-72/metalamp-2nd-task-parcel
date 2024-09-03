@@ -9,8 +9,6 @@ export function calendar() {
    let newMonth = addMonths(new Date(2024, 7, 1), 0);
    const calendarData = getCalendarData(newMonth);
 
-   body.append(createCalendarHeader())
-   createCalendarGrid(calendarData);
 
    function getCalendarData(date=new Date()) {
       console.log(date)
@@ -89,6 +87,23 @@ export function calendar() {
       }
       console.log(grid);
       return grid;
+   }
+
+   function createCalendarFooter() {
+      const footer = document.createElement('div');
+      footer.classList.add('calendar__footer');
+
+      const clearButton = document.createElement('button');
+      clearButton.classList.add('calendar__clear borderless-button');
+      clearButton.textContent = 'Очистить';
+
+      const applyButton = document.createElement('button');
+      applyButton.classList.add('button borderless-button');
+      applyButton.textContent = 'Применить';
+
+      footer.append(clearButton, applyButton);
+
+      return footer;
    }
 
    function getDaysBeforeCurrentMonth(firstDayOfMonth) {
