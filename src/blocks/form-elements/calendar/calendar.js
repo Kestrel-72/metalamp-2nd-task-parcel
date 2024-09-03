@@ -25,7 +25,7 @@ export function calendar() {
    }
 
    function getCalendarData(date=new Date()) {
-      console.log(date)
+      // console.log(date)
       const prevMonth = addMonths(date, -1);
       const nextMonth = addMonths(date, 1);
 
@@ -37,9 +37,9 @@ export function calendar() {
       const numberOfDaysAfterCurrent = getDaysAfterCurrentMonth(numberOfDaysBeforeCurrent + allDaysOfCurrentMonth.length);
 
       const prevDays = allDaysOfPrevMonth.splice(allDaysOfPrevMonth.length - numberOfDaysBeforeCurrent);
-      console.log('Grid days before: ' + prevDays);
+      // console.log('Grid days before: ' + prevDays);
       const nextDays = allDaysOfNextMonth.splice(0, numberOfDaysAfterCurrent);
-      console.log('Grid days after: ' + nextDays);
+      // console.log('Grid days after: ' + nextDays);
 
       const calendarDays = prevDays.concat(allDaysOfCurrentMonth, nextDays);
 
@@ -108,7 +108,7 @@ export function calendar() {
          let currentWeek = calendarData.days.splice(0, 7);
          grid.append(createGridRow(i, currentWeek, calendarData.currentMonth))
       }
-      console.log(grid);
+      // console.log(grid);
       return grid;
    }
 
@@ -132,7 +132,7 @@ export function calendar() {
    function getDaysBeforeCurrentMonth(firstDayOfMonth) {
       let result = (firstDayOfMonth.getDay() || 7) - 1;
       if (result == 0) result = 7;
-      console.log('Days before: ' + result)
+      // console.log('Days before: ' + result)
       return result;
    }
 
@@ -148,7 +148,7 @@ export function calendar() {
 
    function getDaysAfterCurrentMonth(numberOfDaysMonthBeforeAndCurrentMonth) {
       const result = 42 - numberOfDaysMonthBeforeAndCurrentMonth;
-      console.log('Days after: '+ result)
+      // console.log('Days after: '+ result)
       return result;
    }
 
