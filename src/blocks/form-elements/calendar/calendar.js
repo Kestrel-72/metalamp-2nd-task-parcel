@@ -1,4 +1,3 @@
-import { da } from "date-fns/locale";
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
@@ -7,8 +6,24 @@ const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths } = require("date
 export function calendar() {
    const body = document.querySelector('body');
    let newMonth = addMonths(new Date(2024, 7, 1), 0);
-   const calendarData = getCalendarData(newMonth);
 
+   body.append(createCalendar())
+
+   function createCalendar(date = new Date()) {
+      const calendar = document.createElement('div');
+      calendar.classList.add('calendar');
+
+      const calendarData = getCalendarData(newMonth);
+
+      const header = createCalendarHeader(date);
+      const weekDays = createCalendarWeekDays();
+      const grid = createCalendarGrid(calendarData);
+      const footer = createCalendarFooter();
+
+      calendar.append(header, weekDays, grid, footer);
+
+      return calendar;
+   }
 
    function getCalendarData(date=new Date()) {
       console.log(date)
@@ -67,7 +82,8 @@ export function calendar() {
 
    function createCalendarWeekDays() {
       let daysOfWeek = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-      const calendarWeekDays = document.createElement('div.calendar__week-days');
+      const calendarWeekDays = document.createElement('div');
+      calendarWeekDays.classList.add('calendar__week-days');
       for (let i = 0; i < 7; i++) {
          const day = document.createElement('div');
          day.classList.add('calendar__week-day');
@@ -79,7 +95,7 @@ export function calendar() {
 
    function createCalendarGrid(calendarData) {
       let grid = document.createElement('div');
-      grid.classList.add('.calendar__grid');
+      grid.classList.add('calendar__grid');
       
       for (let i = 0; i < 6; i++) {
          let currentWeek = calendarData.days.splice(0, 7);
@@ -94,11 +110,11 @@ export function calendar() {
       footer.classList.add('calendar__footer');
 
       const clearButton = document.createElement('button');
-      clearButton.classList.add('calendar__clear borderless-button');
+      clearButton.classList.add('calendar__clear', 'borderless-button');
       clearButton.textContent = 'Очистить';
 
       const applyButton = document.createElement('button');
-      applyButton.classList.add('button borderless-button');
+      applyButton.classList.add('calendar__apply', 'borderless-button');
       applyButton.textContent = 'Применить';
 
       footer.append(clearButton, applyButton);
