@@ -134,6 +134,9 @@ export function calendar() {
       const applyButton = document.createElement('button');
       applyButton.classList.add('calendar__apply', 'borderless-button');
       applyButton.textContent = 'Применить';
+      applyButton.addEventListener('click', () => {
+         document.querySelector('.calendar').remove();
+      })
 
       footer.append(clearButton, applyButton);
 
