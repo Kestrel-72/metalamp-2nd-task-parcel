@@ -5,10 +5,12 @@ const { eachDayOfInterval, startOfMonth, endOfMonth, addMonths, isToday } = requ
 
 export function calendar() {
    const body = document.querySelector('body');
+   let rangeStart;
+   let rangeEnd;
 
    body.append(createCalendar())
 
-   function createCalendar(date = new Date()) {
+   function createCalendar(date = new Date(), rangeStart, rangeEnd) {
       const calendar = document.createElement('div');
       calendar.classList.add('calendar');
 
@@ -162,23 +164,48 @@ export function calendar() {
    }
 
    function createGridCell(cellIndex, day, currentMonth) {
-      const gridDiv = document.createElement('div');
-      gridDiv.classList.add('calendar__grid-cell');
-      gridDiv.dataset.cell = cellIndex;
+      const gridCell = document.createElement('div');
+      gridCell.classList.add('calendar__grid-cell');
+      gridCell.dataset.cell = cellIndex;
       if (day.getMonth() == currentMonth) {
-         gridDiv.classList.add('calendar__grid-cell_current-month');
+         gridCell.classList.add('calendar__grid-cell_current-month');
       } else {
-         gridDiv.classList.add('calendar__grid-cell_not-current-month');
+         gridCell.classList.add('calendar__grid-cell_not-current-month');
       }
       if (isToday(day)) {
-         gridDiv.classList.add('calendar__grid-cell_today');
+         gridCell.classList.add('calendar__grid-cell_today');
       }
-      gridDiv.textContent = day.getDate();
-      return gridDiv;
+      gridCell.textContent = day.getDate();
+
+      gridCell.addEventListener('click', () => {
+         handleClickOnGridCell(gridCell, day)
+      })
+
+      return gridCell;
    }
 
    function rerenderCalendar(date) {
       document.querySelector('.calendar').remove();
       body.append(createCalendar(date));
+   }
+
+   function handleClickOnGridCell(gridCell, day) {
+      if (!rangeStart && !rangeEnd) {
+         setRangeStart(gridCell, day)
+      } else if (rangeStart && !rangeEnd) {
+         setRangeEnd(gridCell, day)
+      }
+   }
+
+   function setRangeStart(gridCell, day) {
+      rangeStart = day;
+      gridCell.classList.add('calendar__grid-cell_picked');
+      console.log('Range start: ' + rangeStart);
+   }
+
+   function setRangeEnd(gridCell, day) {
+      rangeEnd = day;
+      gridCell.classList.add('calendar__grid-cell_picked');
+      console.log('Range end: ' + day);
    }
 }

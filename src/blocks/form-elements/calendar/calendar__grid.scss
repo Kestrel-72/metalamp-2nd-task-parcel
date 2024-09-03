@@ -37,3 +37,8 @@
       opacity: 50%;
    }
 }
+
+.calendar__grid-cell_picked {
+   @include pagination-number-current-style();
+   background: colors.$purple-blue-gradient();
+}
