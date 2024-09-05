@@ -28,15 +28,19 @@
    height: 100%;
    cursor: pointer;
    border-radius: 50%;
+
+   &:hover {
+      background-color: colors.$dark-shade-10;
+   }
 }
 
 .calendar__grid-cell_today {
    @include pagination-number-current-style();
    background: colors.$green-blue-gradient();
 
-   &:hover {
-      opacity: 50%;
-   }
+   // &:hover {
+   //    opacity: 50%;
+   // }
 }
 
 .calendar__grid-cell_picked {
