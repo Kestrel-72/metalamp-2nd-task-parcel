@@ -1,23 +1,23 @@
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
-const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual, isBefore, add } = require("date-fns");
+const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual, isBefore, add, format } = require("date-fns");
 
 export function calendar() {
    let rangeStart = null;
    let rangeEnd= null;
    let currentMonth = new Date();
 
-   const dateOne = document.querySelector('#dateOne').parentElement || null;
-   const dateTwo = document.querySelector('#dateTwo').parentElement || null;
+   const dateOne = document.querySelector('#dateOne') || null;
+   const dateTwo = document.querySelector('#dateTwo') || null;
    const dateContainer = document.querySelector('.date-dropdown-double') || null;
    
    if (document.querySelector('.date-dropdown-double')) {
-      dateOne.addEventListener('click', () => {
+      dateOne.parentElement.addEventListener('click', () => {
          rerenderCalendar(currentMonth, rangeStart, rangeEnd);
       })
 
-      dateTwo.addEventListener('click', () => {
+      dateTwo.parentElement.addEventListener('click', () => {
          rerenderCalendar(currentMonth, rangeStart, rangeEnd);
       })
    }
@@ -225,6 +225,7 @@ export function calendar() {
          document.querySelector('.calendar').remove();
       }
       dateContainer.append(createCalendar(date, rangeStart, rangeEnd));
+      displayDates(dateOne, dateTwo)
    }
 
    function handleClickOnGridCell(day) {
@@ -256,5 +257,18 @@ export function calendar() {
          start: rangeStart,
          end: rangeEnd
       })
+   }
+
+   function displayDates(dateOne, dateTwo) {
+      if (rangeStart) {
+         dateOne.value = format(rangeStart, 'dd.MM.yyyy');
+      } else {
+         dateOne.value = 'ДД.ММ.ГГГГ'
+      }
+      if (rangeEnd) {
+         dateTwo.value = format(rangeEnd, 'dd.MM.yyyy');
+      } else {
+         dateTwo.value = 'ДД.ММ.ГГГГ'
+      }
    }
 }
