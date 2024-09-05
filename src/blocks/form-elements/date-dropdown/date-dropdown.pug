@@ -3,7 +3,13 @@ include date-dropdown__input
 include date-dropdown__button
 
 mixin date-dropdown(label, name, id, filterMod)
-   div(class="date-dropdown " + filterMod)
-      +date-dropdown__label(id, label)
-      +date-dropdown__input(id, name, filterMod)
-      +date-dropdown__button(id)
+   if filterMod != false
+      div(class="date-dropdown " + filterMod)
+         +date-dropdown__label(id, label)
+         +date-dropdown__input(id, name, filterMod)
+         +date-dropdown__button(id)
+   else 
+      div(class="date-dropdown")
+         +date-dropdown__label(id, label)
+         +date-dropdown__input(id, name)
+         +date-dropdown__button(id)
