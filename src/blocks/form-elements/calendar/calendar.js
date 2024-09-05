@@ -1,7 +1,7 @@
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
-const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual, isBefore } = require("date-fns");
+const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual, isBefore, add } = require("date-fns");
 
 export function calendar() {
    let rangeStart = null;
@@ -227,7 +227,13 @@ export function calendar() {
       dateContainer.append(createCalendar(date, rangeStart, rangeEnd));
    }
 
-   function handleClickOnGridCell( day) {
+   function handleClickOnGridCell(day) {
+      const today = add(new Date(), {
+         days: -1,
+      })
+      if (isBefore(day, today)) {
+         return;
+      }
       if (!rangeStart && !rangeEnd) {
          rangeStart = day;
       } else if (rangeStart && !rangeEnd) {
