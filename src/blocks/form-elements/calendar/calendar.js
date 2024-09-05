@@ -1,7 +1,7 @@
 import arrow_back from "bundle-text:../../../svg/arrow_back_purple.svg";
 import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 
-const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual } = require("date-fns");
+const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual, isBefore } = require("date-fns");
 
 export function calendar() {
    let rangeStart = null;
@@ -229,12 +229,20 @@ export function calendar() {
 
    function handleClickOnGridCell(gridCell, day) {
       if (!rangeStart && !rangeEnd) {
-         setRangeStart(gridCell, day)
-         rerenderCalendar(currentMonth, rangeStart, rangeEnd)
+         setRangeStart(gridCell, day);
       } else if (rangeStart && !rangeEnd) {
-         setRangeEnd(gridCell, day)
-         rerenderCalendar(currentMonth, rangeStart, rangeEnd)
+         if (isBefore(day, rangeStart)) {
+            setRangeEnd(gridCell, rangeStart);
+            setRangeStart(gridCell, day);
+         } 
+         else {
+            setRangeEnd(gridCell, day);
+         }  
+      } else if (rangeStart && rangeEnd) {
+         rangeEnd = null;
+         setRangeStart(gridCell, day)
       }
+      rerenderCalendar(currentMonth, rangeStart, rangeEnd);
    }
 
    function setRangeStart(gridCell, day) {
