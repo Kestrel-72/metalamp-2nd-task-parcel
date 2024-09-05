@@ -2,5 +2,6 @@ include ../date-dropdown/date-dropdown
 
 mixin date-dropdown-double(idOne, idTwo, label, name)
    .date-dropdown-double
-      +date-dropdown(label, name, idOne, false)
-      +date-dropdown(label, name, idTwo, false)
+      .date-dropdown-double__inputs
+         +date-dropdown(label, name, idOne, false)
+         +date-dropdown(label, name, idTwo, false)

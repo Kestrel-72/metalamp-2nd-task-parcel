@@ -4,12 +4,23 @@ import arrow_forward from "bundle-text:../../../svg/arrow_forward_purple.svg";
 const { eachDayOfInterval, isWithinInterval, startOfMonth, endOfMonth, addMonths, isToday, isEqual } = require("date-fns");
 
 export function calendar() {
-   const body = document.querySelector('body');
    let rangeStart = null;
    let rangeEnd= null;
    let currentMonth = new Date();
+
+   const dateOne = document.querySelector('#dateOne').parentElement || null;
+   const dateTwo = document.querySelector('#dateTwo').parentElement || null;
+   const dateContainer = document.querySelector('.date-dropdown-double') || null;
    
-   body.append(createCalendar())
+   if (document.querySelector('.date-dropdown-double')) {
+      dateOne.addEventListener('click', () => {
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd);
+      })
+
+      dateTwo.addEventListener('click', () => {
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd);
+      })
+   }
 
    function createCalendar(date = currentMonth, rangeStart = null, rangeEnd= null) {
       console.log('Rerender Range start: ' + rangeStart)
@@ -210,8 +221,10 @@ export function calendar() {
    }
 
    function rerenderCalendar(date, rangeStart, rangeEnd) {
-      document.querySelector('.calendar').remove();
-      body.append(createCalendar(date, rangeStart, rangeEnd));
+      if (document.querySelector('.calendar')) {
+         document.querySelector('.calendar').remove();
+      }
+      dateContainer.append(createCalendar(date, rangeStart, rangeEnd));
    }
 
    function handleClickOnGridCell(gridCell, day) {
