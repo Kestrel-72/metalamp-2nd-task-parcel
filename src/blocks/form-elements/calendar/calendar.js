@@ -214,7 +214,7 @@ export function calendar() {
       gridCell.textContent = day.getDate();
 
       gridCell.addEventListener('click', () => {
-         handleClickOnGridCell(gridCell, day)
+         handleClickOnGridCell(day)
       })
 
       return gridCell;
@@ -227,34 +227,22 @@ export function calendar() {
       dateContainer.append(createCalendar(date, rangeStart, rangeEnd));
    }
 
-   function handleClickOnGridCell(gridCell, day) {
+   function handleClickOnGridCell( day) {
       if (!rangeStart && !rangeEnd) {
-         setRangeStart(gridCell, day);
+         rangeStart = day;
       } else if (rangeStart && !rangeEnd) {
          if (isBefore(day, rangeStart)) {
-            setRangeEnd(gridCell, rangeStart);
-            setRangeStart(gridCell, day);
+            rangeEnd = rangeStart;
+            rangeStart = day;
          } 
          else {
-            setRangeEnd(gridCell, day);
+            rangeEnd = day;
          }  
       } else if (rangeStart && rangeEnd) {
          rangeEnd = null;
-         setRangeStart(gridCell, day)
+         rangeStart = day;
       }
       rerenderCalendar(currentMonth, rangeStart, rangeEnd);
-   }
-
-   function setRangeStart(gridCell, day) {
-      rangeStart = day;
-      gridCell.classList.add('calendar__grid-cell_picked');
-      console.log('Range start: ' + rangeStart);
-   }
-
-   function setRangeEnd(gridCell, day) {
-      rangeEnd = day;
-      gridCell.classList.add('calendar__grid-cell_picked');
-      console.log('Range end: ' + day);
    }
 
    function isWithinRangeTrack(day, rangeStart, rangeEnd) {
