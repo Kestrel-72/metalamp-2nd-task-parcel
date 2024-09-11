@@ -1,5 +1,5 @@
 mixin date-dropdown__input(id, name, filterMod)
    if filterMod
-      input(class="date-dropdown__input " + filterMod, type="text" id=id, name=name, value="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ" readonly)
+      input(class="date-dropdown__input " + filterMod, type="text" id='dateFilter', name=name, value="ДД.ММ.ГГГГ - ДД.ММ.ГГГГ" readonly)
    else 
       input(class="date-dropdown__input", type="text" id=id, name=name, value="ДД.ММ.ГГГГ" readonly)

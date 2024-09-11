@@ -7,17 +7,25 @@ export function calendar() {
    let rangeStart = null;
    let rangeEnd= null;
    let currentMonth = new Date();
+   const defaultInputValue = 'ДД.ММ.ГГГГ';
 
    const dateOne = document.querySelector('#dateOne') || null;
    const dateTwo = document.querySelector('#dateTwo') || null;
    const dateContainer = document.querySelector('.date-dropdown-double') || null;
+
+   const dateFilter = document.querySelector('#dateFilter') || null;
+   const dateFilterContainer = document.querySelector('.date-dropdown-filter') || null;
    
-   if (document.querySelector('.date-dropdown-double')) {
+   if (dateContainer) {
       dateOne.parentElement.addEventListener('click', () => {
          rerenderCalendar(currentMonth, rangeStart, rangeEnd);
       })
 
       dateTwo.parentElement.addEventListener('click', () => {
+         rerenderCalendar(currentMonth, rangeStart, rangeEnd);
+      })
+   } else if (dateFilterContainer) {
+      dateFilter.parentElement.addEventListener('click', () => {
          rerenderCalendar(currentMonth, rangeStart, rangeEnd);
       })
    }
@@ -224,8 +232,13 @@ export function calendar() {
       if (document.querySelector('.calendar')) {
          document.querySelector('.calendar').remove();
       }
-      dateContainer.append(createCalendar(date, rangeStart, rangeEnd));
-      displayDates(dateOne, dateTwo)
+      if (dateContainer) {
+         dateContainer.append(createCalendar(date, rangeStart, rangeEnd));
+         displayDates(dateOne, dateTwo);
+      } else if (dateFilterContainer) {
+         dateFilterContainer.append(createCalendar(date, rangeStart, rangeEnd));
+         displayFilterDates()
+      }
    }
 
    function handleClickOnGridCell(day) {
@@ -263,12 +276,22 @@ export function calendar() {
       if (rangeStart) {
          dateOne.value = format(rangeStart, 'dd.MM.yyyy');
       } else {
-         dateOne.value = 'ДД.ММ.ГГГГ'
+         dateOne.value = defaultInputValue;
       }
       if (rangeEnd) {
          dateTwo.value = format(rangeEnd, 'dd.MM.yyyy');
       } else {
-         dateTwo.value = 'ДД.ММ.ГГГГ'
+         dateTwo.value = defaultInputValue;
+      }
+   }
+
+   function displayFilterDates() {
+      if (rangeStart && rangeEnd) {
+         dateFilter.value = format(rangeStart, 'dd.MM.yyyy') + ' - ' + format(rangeEnd, 'dd.MM.yyyy');
+      } else if (rangeStart && !rangeEnd){
+         dateFilter.value = format(rangeStart, 'dd.MM.yyyy') + ' - ' + defaultInputValue;
+      } else {
+         dateFilter.value = defaultInputValue + ' - ' + defaultInputValue;
       }
    }
 }
