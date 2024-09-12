@@ -1,6 +1,0 @@
-@use "../../style/fonts.scss" as *;
-
-.form-element-container__header {
-   margin: 0;
-   @include h3-style();
-}
