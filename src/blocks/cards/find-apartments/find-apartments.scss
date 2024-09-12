@@ -1,0 +1,12 @@
+@use "find-apartments__h1";
+@use "../../../style/card-padding.scss";
+@use "../../../style/borders.scss" as *;
+@use "../../../style/shadow.scss" as *;
+@use "../../../style/sizes.scss" as *;
+
+.find-apartments {
+   @include card-border(4px);
+   @include card-shadow();
+   @include extra-large-width();
+   padding: card-padding.$card-padding;
+}

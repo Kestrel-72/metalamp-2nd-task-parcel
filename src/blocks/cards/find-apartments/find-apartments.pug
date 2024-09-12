@@ -1,0 +1,11 @@
+include ../../form-elements/date-dropdown-double/date-dropdown-double
+include ../../form-elements/dropdown/dropdown
+include ../../form-elements/buttons/large-button/large-button
+
+
+mixin find-apartments(h1, dateOne, dateTwo, guests)
+   .find-apartments 
+      h1.find-apartments__h1 #{h1}
+      +date-dropdown-double("dateOne", "dateTwo", "date-dropdown-double", "date-dropdown-double")
+      +dropdown("guests")
+      +large-button("Подобрать номер", "find-apartments-confirm")

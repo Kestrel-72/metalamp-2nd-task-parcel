@@ -10,6 +10,10 @@
    width: 320px;
 }
 
+@mixin extra-large-width {
+   width: 380px;
+}
+
 @mixin regular-height {
    height: 44px;
 }

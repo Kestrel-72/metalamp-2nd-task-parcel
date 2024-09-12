@@ -1,0 +1,5 @@
+@use "../../../style/fonts.scss" as *;
+
+.find-apartments__h1 {
+   @include h1-style();
+}
